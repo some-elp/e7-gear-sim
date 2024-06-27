@@ -9,7 +9,7 @@ export default function App() {
     <BrowserRouter basename="/e7-gear-sim">
       <main>
         <Routes>
-          <Route path="/" element = {<Home/>}/>
+          <Route index element = {<Home/>}/>
           <Route path="learning" element = {<Learning/>}/>
         </Routes>
       </main>
