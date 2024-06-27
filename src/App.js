@@ -4,7 +4,7 @@ import Learning from "./Learning";
 import Home from "./Home";
 
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <main>
