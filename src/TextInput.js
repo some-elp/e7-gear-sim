@@ -3,18 +3,15 @@ import { useState } from "react";
 function TextInput (){
     const [inputValue, setInputValue] = useState("");
 
-    function handleChange(){
-        setInputValue(input.value);
-    }
-
     return (
         <div>
             <input 
                 type = "text"
                 value = {inputValue}
-                onChange = {handleChange}
+                onChange = {(e) => setInputValue(e.target.value)}
                 placeholder = "some text"
             />
+            <p>text: {inputValue}</p>
         </div>
     );
 }
