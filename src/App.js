@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, NavLink, HashRouter } from "react-router-
 
 import Learning from "./Learning";
 import Home from "./Home";
+import Gacha from "./Gacha";
 
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
         <Routes>
           <Route index element = {<Home/>}/>
           <Route path="learning" element = {<Learning/>}/>
+          <Route path="gacha" element = {<Gacha/>}/>
         </Routes>
       </main>
     </BrowserRouter>
