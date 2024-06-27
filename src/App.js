@@ -6,7 +6,7 @@ import Home from "./Home";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/e7-gear-sim">
       <main>
         <Routes>
           <Route path="/" element = {<Home/>}/>
