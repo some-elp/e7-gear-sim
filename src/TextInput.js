@@ -4,7 +4,7 @@ function TextInput (){
     const [inputValue, setInputValue] = useState("");
 
     return (
-        <div>
+        <>
             <input 
                 type = "text"
                 value = {inputValue}
@@ -12,7 +12,7 @@ function TextInput (){
                 placeholder = "some text"
             />
             <p>text: {inputValue}</p>
-        </div>
+        </>
     );
 }
 
