@@ -1,5 +1,7 @@
+import { useState } from "react";
+
 export default function SubstatDropdown(){
-    const [substat, setSubstat] = useState('Select Substat');
+    const [substat, setSubstat] = useState("Select Substat");
     return(
         <form>
             <label>Substats:</label>
