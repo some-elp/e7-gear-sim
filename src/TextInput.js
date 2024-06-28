@@ -8,9 +8,11 @@ function TextInput (){
             <input 
                 type = "text"
                 value = {inputValue}
-                onChange = {(e) => setInputValue(e.target.value)}
                 placeholder = "some text"
             />
+            <button onClick={() => setInputValue(value)}>
+                test
+            </button>
             <p>text: {inputValue}</p>
         </>
     );
