@@ -4,7 +4,7 @@ export default function SubstatDropdown(){
     const [substat, setSubstat] = useState("Select Substat");
     return(
         <form>
-            <label>Substats:</label>
+            <label>Substats: </label>
             <select 
                 value={substat}
                 onChange={(e) => setSubstat(e.target.value)}
