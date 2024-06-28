@@ -1,7 +1,7 @@
-function SubstatDropdown(){
+export default function SubstatDropdown(){
     const [substat, setSubstat] = useState("Select Substat");
     return(
-        <>
+        <form>
             <label>Substats:</label>
             <select 
                 value={substat}
@@ -20,8 +20,7 @@ function SubstatDropdown(){
                 <option value="hp">Flat Health</option>
             </select>
             <p>{substat}</p>
-        </>
+        </form>
     );
 }
 
-export default SubstatDropdown;
