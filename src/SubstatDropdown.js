@@ -1,10 +1,9 @@
 import { useState } from "react";
 
 export default function SubstatDropdown(){
-    const [substat, setSubstat] = useState("Select Substat");
+    const [substat, setSubstat] = useState("");
     return(
         <form>
-            <label>Substats: </label>
             <select 
                 value={substat}
                 onChange={(e) => setSubstat(e.target.value)}
