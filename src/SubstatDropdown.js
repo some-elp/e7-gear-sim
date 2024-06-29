@@ -8,12 +8,13 @@ export default function SubstatDropdown({ }) {
         substat4: ""
     });
 
-    function handleSelect(event) {
-        setSubstats({
-            ...substats,
-            [event.target.name]: event.target.value,
-        });
-    };
+    const handleSelect = (event) => {
+        const { name, value } = event.target;
+        setSubstats((prevSubstats) => ({
+          ...prevSubstats,
+          [name]: value,
+        }));
+      };
 
     //const allSelected = Array.values(substats).every(v => v !== "");
 
