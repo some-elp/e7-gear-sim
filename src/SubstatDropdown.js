@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SubstatDropdown({ }) {
+export default function SubstatDropdown() {
     const [substats, setSubstats] = useState({
         substat1: "",
         substat2: "",
@@ -8,19 +8,20 @@ export default function SubstatDropdown({ }) {
         substat4: ""
     });
 
-    function handleSelect(){
-        /*const { name, value } = event.target;
+    const handleSelect = (event) => {
+        const { name, value } = event.target;
         setSubstats((prevSubstats) => ({
           ...prevSubstats,
-          [name]: value,
-        }));*/
-    };
+          [name]: value
+        }));
+      };
+
+    console.log(substats);
 
     //const allSelected = Array.values(substats).every(v => v !== "");
 
     return (
         <div>
-            {/*{!allSelected && (*/}
             <form>
                 <select
                     name="substat1"
@@ -91,9 +92,6 @@ export default function SubstatDropdown({ }) {
                     <option value="hp">Flat Health</option>
                 </select>
             </form>
-            {/*<p>{substats}</p>
-            )}
-            {allSelected && (<p>it didn't work</p>)}*/}
         </div>
     );
 }

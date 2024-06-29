@@ -16,7 +16,7 @@ export default function Learning() {
 
   function jumpTo(nextMove) {
     setCurrentMove(nextMove)
-    setXIsNext(nextMove % 2 == 0);
+    setXIsNext(nextMove % 2 === 0);
   }
 
   const moves = history.map((squares, move) => {
