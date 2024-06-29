@@ -91,6 +91,7 @@ export default function SubstatDropdown({ }) {
                     <option value="hp">Flat Health</option>
                 </select>
             </form>
+            <p>{substats}</p>
             {/*)}
             {allSelected && (<p>it didn't work</p>)}*/}
         </div>
