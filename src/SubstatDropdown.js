@@ -8,13 +8,13 @@ export default function SubstatDropdown({ }) {
         substat4: ""
     });
 
-    const handleSelect = (event) => {
-        const { name, value } = event.target;
+    function handleSelect(event){
+        /*const { name, value } = event.target;
         setSubstats((prevSubstats) => ({
           ...prevSubstats,
           [name]: value,
-        }));
-      };
+        }));*/
+    };
 
     //const allSelected = Array.values(substats).every(v => v !== "");
 
@@ -25,7 +25,7 @@ export default function SubstatDropdown({ }) {
                 <select
                     name="substat1"
                     value={substats.substat1}
-                    onChange={handleSelect}
+                    onChange={handleSelect(e)}
                 >
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
@@ -42,7 +42,7 @@ export default function SubstatDropdown({ }) {
                 <select
                     name="substat2"
                     value={substats.substat2}
-                    onChange={handleSelect}
+                    onChange={handleSelect(e)}
                 >
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
@@ -59,7 +59,7 @@ export default function SubstatDropdown({ }) {
                 <select
                     name="substat3"
                     value={substats.substat3}
-                    onChange={handleSelect}
+                    onChange={handleSelect(e)}
                 >
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
@@ -76,7 +76,7 @@ export default function SubstatDropdown({ }) {
                 <select
                     name="substat4"
                     value={substats.substat4}
-                    onChange={handleSelect}
+                    onChange={handleSelect(e)}
                 >
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
