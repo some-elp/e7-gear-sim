@@ -18,7 +18,8 @@ export default function SubstatDropdown() {
 
     console.log(substats);
 
-    //const allSelected = Array.values(substats).every(v => v !== "");
+    const allSelected = Object.values(substats).every(substat => substat !== "");
+    console.log(allSelected);
 
     return (
         <div>
