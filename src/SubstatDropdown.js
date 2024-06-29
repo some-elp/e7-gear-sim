@@ -9,10 +9,9 @@ export default function SubstatDropdown({ }) {
     });
 
     function handleSelect(event) {
-        const { name, value } = event.target;
         setSubstats({
             ...substats,
-            [name]: value,
+            [event.target.name]: event.target.value,
         });
     };
 
