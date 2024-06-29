@@ -16,7 +16,7 @@ export default function SubstatDropdown({ }) {
         });
     };
 
-    const allSelected = Object.values(substats).every(selection => selection !== '');
+    const allSelected = Object.values(substats).every(v !== "");
 
     return (
         <div>
@@ -90,10 +90,9 @@ export default function SubstatDropdown({ }) {
                     <option value="defense">Flat Defense</option>
                     <option value="hp">Flat Health</option>
                 </select>
-                <p>{substats}</p>
             </form>
             )}
-            {allSelected && (<p>{substats}</p>)}
+            {allSelected && (<p>it didn't work</p>)}
         </div>
     );
 }
