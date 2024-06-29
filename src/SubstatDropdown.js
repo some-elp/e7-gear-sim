@@ -16,7 +16,7 @@ export default function SubstatDropdown({ }) {
         });
     };
 
-    const allSelected = Object.values(substats).every(v !== "");
+    const allSelected = Object.values(substats).every(v => v !== "");
 
     return (
         <div>
