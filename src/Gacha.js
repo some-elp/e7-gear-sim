@@ -22,7 +22,7 @@ export default function Gacha() {
     });
 
     //substat value submit button state
-    const [submittedText, setSubmittedText] = useState(null);
+    const [submitted, setSubmitted] = useState(false);
 
     //handler for substat dropdown
     const handleSelect = (event) => {
@@ -44,16 +44,8 @@ export default function Gacha() {
 
     //handler for submit button
     function handleSubmit() {
-            setSubmittedText(textInputs);
+        setSubmitted(true);
     }
-
-    //boolean for all dropdowns having a value
-    const allSelected = Object.values(substats).every(substat => substat !== "");
-
-    console.log(allSelected);
-    console.log(substats);
-    console.log(textInputs);
-    console.log(submittedText);
 
     return (
         <div>
@@ -67,8 +59,9 @@ export default function Gacha() {
             </select>
             <p>{iLevel}</p>
             <label>Substats:</label>
-            {/*for substat dropdown menu*/}
-            {!allSelected && !submittedText && (
+
+            {/*if not submitted then show */}
+            {!submitted && (
                 <div>
                     <SubstatDropdown substats={substats} handleSelect={handleSelect} />
                     <TextInput
@@ -79,7 +72,7 @@ export default function Gacha() {
                 </div>
             )}
             {/*show substats and their values*/}
-            {submittedText && (
+            {submitted && (
                 <div>
                     <p>Substat 1: {substats.substat1} {textInputs.stat1}</p>
                     <p>Substat 2: {substats.substat2} {textInputs.stat2}</p>
