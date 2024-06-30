@@ -44,7 +44,9 @@ export default function Gacha() {
 
     //handler for submit button
     function handleSubmit() {
-        setSubmittedText(textInputs);
+        if(Object.values(textInputs.every(v => v !== ""))){
+            setSubmittedText(textInputs);
+        }
     }
 
     //boolean for all dropdowns having a value
