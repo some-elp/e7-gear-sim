@@ -9,6 +9,7 @@ export default function SubstatDropdown({ substats, handleSelect }) {
                     value={substats.substat1}
                     onChange={handleSelect}
                 >
+                    <option value="">-Pick Something-</option>
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
                     <option value="hp%">Health%</option>
@@ -26,6 +27,7 @@ export default function SubstatDropdown({ substats, handleSelect }) {
                     value={substats.substat2}
                     onChange={handleSelect}
                 >
+                    <option value="">-Pick Something-</option>
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
                     <option value="hp%">Health%</option>
@@ -43,6 +45,7 @@ export default function SubstatDropdown({ substats, handleSelect }) {
                     value={substats.substat3}
                     onChange={handleSelect}
                 >
+                    <option value="">-Pick Something-</option>
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
                     <option value="hp%">Health%</option>
@@ -60,6 +63,7 @@ export default function SubstatDropdown({ substats, handleSelect }) {
                     value={substats.substat4}
                     onChange={handleSelect}
                 >
+                    <option value="">-Pick Something-</option>
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
                     <option value="hp%">Health%</option>

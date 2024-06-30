@@ -21,8 +21,11 @@ export default function Gacha() {
         stat4: ""
     });
 
-    //substat value submit button state
+    //state for submit button
     const [submitted, setSubmitted] = useState(false);
+
+    //state for error list
+    const [errors, setErrors] = useState({});
 
     //handler for substat dropdown
     const handleSelect = (event) => {
@@ -44,7 +47,30 @@ export default function Gacha() {
 
     //handler for submit button
     function handleSubmit() {
-        setSubmitted(true);
+        const newErrors = {};
+
+        //dropdown validation
+        Object.entries(substats).forEach(([key, value]) => {
+            if (value === "") {
+                newErrors[key] = "This field is required";
+            }
+        });
+
+        // Validate text inputs
+        Object.entries(textInputs).forEach(([key, value]) => {
+            if (value === '' || isNaN(value) || Number(value) < 0) {
+                newErrors[key] = "Value must be a number greater than 0";
+            }
+        });
+
+        if(Object.keys(newErrors).length > 0){
+            setErrors(newErrors);
+        }
+        else{
+            setErrors({});
+            setSubmitted(true);
+        }
+
     }
 
     return (
@@ -68,6 +94,7 @@ export default function Gacha() {
                         textInputs={textInputs}
                         handleTextInputChange={handleTextInputChange}
                         handleSubmit={handleSubmit}
+                        errors={errors}
                     />
                 </div>
             )}
