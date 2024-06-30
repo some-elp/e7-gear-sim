@@ -44,9 +44,7 @@ export default function Gacha() {
 
     //handler for submit button
     function handleSubmit() {
-        if (Object.values(textInputs.every(v => v !== ""))) {
             setSubmittedText(textInputs);
-        }
     }
 
     //boolean for all dropdowns having a value
@@ -75,21 +73,6 @@ export default function Gacha() {
                     />
                 </div>
             )}
-
-            {/*for substat text input
-            {allSelected && !submittedText && (
-                <div>
-                    <p>Substat 1: {substats.substat1}</p>
-                    <p>Substat 2: {substats.substat2}</p>
-                    <p>Substat 3: {substats.substat3}</p>
-                    <p>Substat 4: {substats.substat4}</p>
-                    <TextInput
-                        textInputs={textInputs}
-                        handleTextInputChange={handleTextInputChange}
-                        handleSubmit={handleSubmit}
-                    />
-                </div>
-            )}*/}
             {/*show substats and their values*/}
             {submittedText && (
                 <div>
