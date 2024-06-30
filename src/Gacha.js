@@ -44,7 +44,7 @@ export default function Gacha() {
 
     //handler for submit button
     function handleSubmit() {
-        if(Object.values(textInputs.every(v => v !== ""))){
+        if (Object.values(textInputs.every(v => v !== ""))) {
             setSubmittedText(textInputs);
         }
     }
@@ -65,9 +65,18 @@ export default function Gacha() {
             <p>{iLevel}</p>
             <label>Substats:</label>
             {/*for substat dropdown menu*/}
-            {!allSelected && (<SubstatDropdown substats={substats} handleSelect={handleSelect} />)}
+            {!allSelected && !submittedText && (
+                <div>
+                    <SubstatDropdown substats={substats} handleSelect={handleSelect} />
+                    <TextInput
+                        textInputs={textInputs}
+                        handleTextInputChange={handleTextInputChange}
+                        handleSubmit={handleSubmit}
+                    />
+                </div>
+            )}
 
-            {/*for substat text input*/}
+            {/*for substat text input
             {allSelected && !submittedText && (
                 <div>
                     <p>Substat 1: {substats.substat1}</p>
@@ -80,7 +89,7 @@ export default function Gacha() {
                         handleSubmit={handleSubmit}
                     />
                 </div>
-            )}
+            )}*/}
             {/*show substats and their values*/}
             {submittedText && (
                 <div>
