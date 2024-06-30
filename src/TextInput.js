@@ -5,10 +5,10 @@ function TextInput ({textInputs, handleTextInputChange, handleSubmit}){
 
     return (
         <>
-            <input type="text" name="text1" value={textInputs.text1} onChange={handleTextInputChange}/>
-            <input type="text" name="text2" value={textInputs.text2} onChange={handleTextInputChange}/>
-            <input type="text" name="text3" value={textInputs.text3} onChange={handleTextInputChange}/>
-            <input type="text" name="text4" value={textInputs.text4} onChange={handleTextInputChange}/>
+            <input type="number" name="stat1" value={textInputs.stat1} onChange={handleTextInputChange}/>
+            <input type="number" name="stat2" value={textInputs.stat2} onChange={handleTextInputChange}/>
+            <input type="number" name="stat3" value={textInputs.stat3} onChange={handleTextInputChange}/>
+            <input type="number" name="stat4" value={textInputs.stat4} onChange={handleTextInputChange}/>
             <button onClick={handleSubmit}>Submit</button>
         </>
     );

@@ -15,10 +15,10 @@ export default function Gacha() {
 
     //substat text input state
     const [textInputs, setTextInputs] = useState({
-        text1: "",
-        text2: "",
-        text3: "",
-        text4: ""
+        stat1: "",
+        stat2: "",
+        stat3: "",
+        stat4: ""
     });
 
     //substat value submit button state
@@ -68,11 +68,10 @@ export default function Gacha() {
             {/*for substat text input*/}
             {allSelected && !submittedText && (
                 <div>
-                    <ul>
-                        {Object.entries(substats).map(([key, value]) => (
-                            <li key={key}>{value}</li>
-                        ))}
-                    </ul>
+                    <p>Substat 1: {substats.substat1}</p>
+                    <p>Substat 2: {substats.substat2}</p>
+                    <p>Substat 3: {substats.substat3}</p>
+                    <p>Substat 4: {substats.substat4}</p>
                     <TextInput
                         textInputs={textInputs}
                         handleTextInputChange={handleTextInputChange}
@@ -80,15 +79,13 @@ export default function Gacha() {
                     />
                 </div>
             )}
-            {/* Display the content of the text inputs after submit */}
+            {/*show substats and their values*/}
             {submittedText && (
                 <div>
-                    <p>Submitted substats:</p>
-                    <ul>
-                        {Object.entries(submittedText).map(([key, value]) => (
-                            <li key={key}>{value}</li>
-                        ))}
-                    </ul>
+                    <p>Substat 1: {substats.substat1} {textInputs.stat1}</p>
+                    <p>Substat 2: {substats.substat2} {textInputs.stat2}</p>
+                    <p>Substat 3: {substats.substat3} {textInputs.stat3}</p>
+                    <p>Substat 4: {substats.substat4} {textInputs.stat4}</p>
                 </div>
             )}
         </div>
