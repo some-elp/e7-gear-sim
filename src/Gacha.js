@@ -50,6 +50,11 @@ export default function Gacha() {
     //boolean for all dropdowns having a value
     const allSelected = Object.values(substats).every(substat => substat !== "");
 
+    console.log(allSelected);
+    console.log(substats);
+    console.log(textInputs);
+    console.log(submittedText);
+
     return (
         <div>
             <label>Equipment Level</label>
