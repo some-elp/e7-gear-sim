@@ -1,6 +1,7 @@
-function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement }) {
+function GearRoller({enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement}) {
     //TODO: iLevel difference, Purple/Red gear difference.
 
+    console.log('GearRoller props:', { substats, gearLevel, gearTier, textInputs, setTextInputs, handleEnhancement });
     let enhanceLevel = 0;
 
 
@@ -21,8 +22,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
             const { values, weights } = enhancement[substatName][gearLevel][gearTier];
             let increment = randomIncrease(values, weights);
 
-            
-            inputHistory[randomSubstat] = (parseInt(inputHistory[randomSubstat]) || 0) + increment;
+            inputHistory[randomSubstat] = (parseInt(inputHistory[randomSubstat])) + increment;
             handleEnhancement(inputHistory);
         }
         console.log(substats);
@@ -42,7 +42,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
                 <p>{substats.substat4}: {textInputs.stat4}</p>
                 <button onClick={enhanceGear}>Enhance</button>
             </>
-        )
+        );
     }
     else {
         return <p>Satisfied?</p>

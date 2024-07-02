@@ -132,7 +132,8 @@ export default function Gacha() {
                         textInputs={textInputs}
                         gearLevel={iLevel}
                         gearTier={tier}
-                        handleEnhancement={handleEnhancement}
+                        handleEnhancement={(updated) =>{
+                            console.log("handleEnhancement called with:", updated); handleEnhancement(updated);}}
                     />
                     {/*
                     <p>{substats.substat1}: {textInputs.stat1}</p>
