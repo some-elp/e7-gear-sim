@@ -56,7 +56,7 @@ export default function Gacha() {
     //Handler for substat enhancement?
     const handleEnhancement = (updated) => {
         setTextInputs(updated);
-    }
+    };
 
 
     //handler for submit button
