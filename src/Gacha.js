@@ -85,7 +85,7 @@ export default function Gacha() {
             setSubmitted(true);
         }
 
-        
+
     }
 
     return (
@@ -136,12 +136,6 @@ export default function Gacha() {
                         handleEnhancement={(updated) =>{
                             console.log("handleEnhancement called with:", updated); handleEnhancement(updated);}}
                     />
-                    {/*
-                    <p>{substats.substat1}: {textInputs.stat1}</p>
-                    <p>{substats.substat2}: {textInputs.stat2}</p>
-                    <p>{substats.substat3}: {textInputs.stat3}</p>
-                    <p>{substats.substat4}: {textInputs.stat4}</p>
-                    */}      
                 </div>
             )}
         </div>
