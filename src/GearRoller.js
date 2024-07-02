@@ -1,4 +1,4 @@
-function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, setTextInputs }) {
+function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement }) {
     //TODO: iLevel difference, Purple/Red gear difference.
 
     let enhanceLevel = 0;
@@ -23,7 +23,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, se
 
             
             inputHistory[randomSubstat] = (parseInt(inputHistory[randomSubstat]) || 0) + increment;
-            setTextInputs(inputHistory);
+            handleEnhancement(inputHistory);
         }
         console.log(substats);
         console.log(textInputs);
