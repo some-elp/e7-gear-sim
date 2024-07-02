@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SubstatDropdown from "./SubstatDropdown"
 import TextInput from "./TextInput";
+import GearRoller from "./GearRoller";
 
 export default function Gacha() {
-    const [iLevel, setILevel] = useState('');
+    //states for the gear tier and json file.
+    const [enhancement, setEnhancement] = useState(null);
+    const [tier, setTier] = useState("heroic");
+    const [iLevel, setILevel] = useState("85");
 
     //substat dropdown menu state
     const [substats, setSubstats] = useState({
@@ -26,6 +30,13 @@ export default function Gacha() {
 
     //state for error list
     const [errors, setErrors] = useState({});
+
+    //load gear enhancement json
+    useEffect(() => {
+        fetch('public/enhancement.json')
+          .then(response => response.json())
+          .then(data => setEnhancement(data));
+      }, []);
 
     //handler for substat dropdown
     const handleSelect = (event) => {
@@ -84,6 +95,17 @@ export default function Gacha() {
                 <option value="88">88</option>
             </select>
             <p>{iLevel}</p>
+
+            <label>Equipment Tier</label>
+            <select
+                value={tier}
+                onChange={(e) => setTier(e.target.value)}    
+            >
+                <option value="epic">Epic/Red</option>
+                <option value="heroic">Heroic/Purple</option>
+            </select>
+            <p>{tier}</p>
+
             <label>Substats:</label>
 
             {/*if not submitted then show */}
@@ -101,10 +123,19 @@ export default function Gacha() {
             {/*show substats and their values*/}
             {submitted && (
                 <div>
-                    <p>Substat 1: {substats.substat1} {textInputs.stat1}</p>
-                    <p>Substat 2: {substats.substat2} {textInputs.stat2}</p>
-                    <p>Substat 3: {substats.substat3} {textInputs.stat3}</p>
-                    <p>Substat 4: {substats.substat4} {textInputs.stat4}</p>
+                    <GearRoller 
+                        enhancement={enhancement}
+                        substats={substats}
+                        textInputs={textInputs}
+                        gearLevel={iLevel}
+                        gearTier={tier}
+                    />
+                    {/*
+                    <p>{substats.substat1}: {textInputs.stat1}</p>
+                    <p>{substats.substat2}: {textInputs.stat2}</p>
+                    <p>{substats.substat3}: {textInputs.stat3}</p>
+                    <p>{substats.substat4}: {textInputs.stat4}</p>
+                    */}      
                 </div>
             )}
         </div>
