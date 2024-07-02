@@ -15,15 +15,15 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, se
         let substatKeys = Object.keys(substats);
         let randomSubstat = substatKeys[Math.floor(Math.random() * substatKeys.length)];
         let substatName = substats[randomSubstat];
+        let inputHistory = {...textInputs};
 
         if (substatName && enhancement[substatName] && enhancement[substatName][gearLevel]) {
             const { values, weights } = enhancement[substatName][gearLevel][gearTier];
             let increment = randomIncrease(values, weights);
 
-            setTextInputs((prevTextInputs) => ({
-                ...prevTextInputs,
-                [randomSubstat]: (parseInt(prevTextInputs[randomSubstat]) || 0) + increment
-            }));
+            
+            inputHistory[randomSubstat] = (parseInt(inputHistory[randomSubstat]) || 0) + increment;
+            setTextInputs(inputHistory);
         }
         console.log(substats);
         console.log(textInputs);
