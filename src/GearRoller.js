@@ -36,10 +36,10 @@ function GearRoller({enhancement, substats, textInputs, gearLevel, gearTier, han
 
         return (
             <>
-                <p>{substats.substat1}: {textInputs.stat1}</p>
-                <p>{substats.substat2}: {textInputs.stat2}</p>
-                <p>{substats.substat3}: {textInputs.stat3}</p>
-                <p>{substats.substat4}: {textInputs.stat4}</p>
+                <p>{substats.substat1}: {textInputs.substat1}</p>
+                <p>{substats.substat2}: {textInputs.substat2}</p>
+                <p>{substats.substat3}: {textInputs.substat3}</p>
+                <p>{substats.substat4}: {textInputs.substat4}</p>
                 <button onClick={enhanceGear}>Enhance</button>
             </>
         );

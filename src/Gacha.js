@@ -20,10 +20,10 @@ export default function Gacha() {
 
     //substat text input state
     const [textInputs, setTextInputs] = useState({
-        stat1: "",
-        stat2: "",
-        stat3: "",
-        stat4: ""
+        substat1: "",
+        substat2: "",
+        substat3: "",
+        substat4: ""
     });
 
     //state for submit button
