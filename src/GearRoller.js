@@ -30,7 +30,6 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
         }
         console.log(substats);
         console.log(textInputs);
-        console.log(enhanceLevel);
 
     }
 
