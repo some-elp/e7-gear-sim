@@ -127,6 +127,7 @@ export default function Gacha() {
                         textInputs={textInputs}
                         gearLevel={iLevel}
                         gearTier={tier}
+                        setTextInputs={setTextInputs}
                     />
                     {/*
                     <p>{substats.substat1}: {textInputs.stat1}</p>
