@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import SubstatDropdown from "./SubstatDropdown"
 import TextInput from "./TextInput";
 import GearRoller from "./GearRoller";
+import Enhancement from "./enhancement";
 
 export default function Gacha() {
     //states for the gear tier and json file.
-    const [enhancement, setEnhancement] = useState(null);
+    const [enhancement, setEnhancement] = useState(Enhancement);
     const [tier, setTier] = useState("heroic");
     const [iLevel, setILevel] = useState("85");
 
@@ -32,11 +33,7 @@ export default function Gacha() {
     const [errors, setErrors] = useState({});
 
     //load gear enhancement json
-    useEffect(() => {
-        fetch('./public/enhancement.json')
-          .then(response => response.json())
-          .then(data => setEnhancement(data));
-      }, []);
+    const [data, setData] = useState(enhancement);
 
     //handler for substat dropdown
     const handleSelect = (event) => {
@@ -55,6 +52,7 @@ export default function Gacha() {
             [name]: value,
         }));
     };
+
 
     //handler for submit button
     function handleSubmit() {

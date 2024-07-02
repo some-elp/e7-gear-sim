@@ -1,4 +1,4 @@
-{
+const Enhancement = {
     "attack%": {
         "85": {
             "heroic": {
@@ -639,4 +639,5 @@
             }
         }
     }
-}
+};
+export default Enhancement;
