@@ -25,14 +25,26 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, se
                 [randomSubstat]: (parseInt(prevTextInputs[randomSubstat]) || 0) + increment
             }));
         }
+        console.log(substats);
+        console.log(textInputs);
         enhanceLevel = enhanceLevel + 3;
+        console.log(enhanceLevel);
 
     }
 
-    if(enhanceLevel < 15){
-        return <button onClick={enhanceGear}>Enhance</button>
+    if (enhanceLevel < 15) {
+
+        return (
+            <>
+                <p>{substats.substat1}: {textInputs.stat1}</p>
+                <p>{substats.substat2}: {textInputs.stat2}</p>
+                <p>{substats.substat3}: {textInputs.stat3}</p>
+                <p>{substats.substat4}: {textInputs.stat4}</p>
+                <button onClick={enhanceGear}>Enhance</button>
+            </>
+        )
     }
-    else{
+    else {
         return <p>Satisfied?</p>
     }
 }
