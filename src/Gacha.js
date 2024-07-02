@@ -33,7 +33,7 @@ export default function Gacha() {
 
     //load gear enhancement json
     useEffect(() => {
-        fetch('public/enhancement.json')
+        fetch('./public/enhancement.json')
           .then(response => response.json())
           .then(data => setEnhancement(data));
       }, []);
