@@ -1,7 +1,7 @@
 function GearRoller({enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement}) {
     //TODO: iLevel difference, Purple/Red gear difference.
 
-    console.log('GearRoller props:', { substats, gearLevel, gearTier, textInputs, setTextInputs, handleEnhancement });
+    console.log('GearRoller props:', { substats, gearLevel, gearTier, textInputs, handleEnhancement });
     let enhanceLevel = 0;
 
 
