@@ -14,14 +14,16 @@ export default function Gacha() {
     const [substats, setSubstats] = useState({
         substat1: "",
         substat2: "",
-        substat3: ""
+        substat3: "",
+        substat4: ""
     });
 
     //substat text input state
     const [textInputs, setTextInputs] = useState({
         substat1: "",
         substat2: "",
-        substat3: ""
+        substat3: "",
+        substat4: ""
     });
 
     //state for submit button
@@ -81,7 +83,7 @@ export default function Gacha() {
 
             if (input < minValue || input > maxValue) {
                 alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
-                return;
+                newErrors[value] = "Starting stats out of bounds"
               }
 
         });
