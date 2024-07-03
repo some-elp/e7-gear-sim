@@ -75,8 +75,9 @@ export default function Gacha() {
             let validRanges = enhancement[key][iLevel][tier];
             let minValue = Math.min(...validRanges);
             let maxValue = Math.max(...validRanges);
+            let input = parseInt(textInputs[key]);
 
-            if (initialValue < minValue || initialValue > maxValue) {
+            if (input < minValue || input > maxValue) {
                 alert(`Initial value for ${key} must be between ${minValue} and ${maxValue}.`);
                 return;
               }
