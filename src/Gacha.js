@@ -72,9 +72,10 @@ export default function Gacha() {
             if (value === "") {
                 newErrors[key] = "This field is required";
             }
-            let validRanges = enhancement[value][iLevel][tier];
-            console.log([value]);
-            
+            let validRanges = enhancement[substats[key]][iLevel][tier];
+            console.log([substats[key]]);
+            console.log(value);
+
             let minValue = Math.min(...validRanges);
             let maxValue = Math.max(...validRanges);
             let input = parseInt(textInputs[key]);
