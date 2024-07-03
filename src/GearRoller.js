@@ -47,8 +47,11 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
 }
 
 function randomIncrease(values, weights) {
+    //gets sum of all weights
     let totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
+    //generate random number from 0 -> weights
     let randomNum = Math.random() * totalWeight;
+
     for (let i = 0; i < values.length; i++) {
         if (randomNum < weights[i]) {
             return values[i];

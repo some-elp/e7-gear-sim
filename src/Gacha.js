@@ -64,11 +64,15 @@ export default function Gacha() {
         const newErrors = {};
 
         //dropdown validation
+        const hasDuplicates = Object.values(substats).some((item, index) => Object.values(substats).indexOf(item) !== index);
         Object.entries(substats).forEach(([key, value]) => {
             if (value === "") {
                 newErrors[key] = "This field is required";
             }
         });
+        if(hasDuplicates){
+            newErrors["dupes"] = "No duplicate substats";
+        }
 
         // Validate text inputs
         Object.entries(textInputs).forEach(([key, value]) => {
