@@ -1,5 +1,5 @@
 
-export default function SubstatDropdown({ substats, handleSelect }) {
+export default function SubstatDropdown({ substats, handleSelect, tier }) {
 
     return (
         <div>
