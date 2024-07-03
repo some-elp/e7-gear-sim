@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SubstatDropdown from "./SubstatDropdown"
 import TextInput from "./TextInput";
 import GearRoller from "./GearRoller";
@@ -32,9 +32,6 @@ export default function Gacha() {
     //state for error list
     const [errors, setErrors] = useState({});
 
-    //load gear enhancement json
-    const [data, setData] = useState(enhancement);
-
     //handler for substat dropdown
     const handleSelect = (event) => {
         const { name, value } = event.target;
@@ -63,16 +60,32 @@ export default function Gacha() {
     function handleSubmit() {
         const newErrors = {};
 
+        //No iLevel 88 Heroic Gear!
+        if (iLevel === "88" && tier === "heroic"){
+            alert("As of now, heroic gear cannot be iLevel 88")
+            return;
+        }
+
         //dropdown validation
         const hasDuplicates = Object.values(substats).some((item, index) => Object.values(substats).indexOf(item) !== index);
         Object.entries(substats).forEach(([key, value]) => {
             if (value === "") {
                 newErrors[key] = "This field is required";
             }
+            let validRanges = enhancement[key][iLevel][tier];
+            let minValue = Math.min(...validRanges);
+            let maxValue = Math.max(...validRanges);
+
+            if (initialValue < minValue || initialValue > maxValue) {
+                alert(`Initial value for ${key} must be between ${minValue} and ${maxValue}.`);
+                return;
+              }
+
         });
         if(hasDuplicates){
             newErrors["dupes"] = "No duplicate substats";
         }
+
 
         // Validate text inputs
         Object.entries(textInputs).forEach(([key, value]) => {
