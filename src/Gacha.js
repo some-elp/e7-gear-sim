@@ -144,6 +144,7 @@ export default function Gacha() {
                         handleTextInputChange={handleTextInputChange}
                         handleSubmit={handleSubmit}
                         errors={errors}
+                        tier={tier}
                     />
                 </div>
             )}
