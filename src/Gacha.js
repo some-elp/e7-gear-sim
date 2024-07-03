@@ -85,6 +85,7 @@ export default function Gacha() {
         });
         if(hasDuplicates){
             newErrors["dupes"] = "No duplicate substats";
+            
         }
 
 
