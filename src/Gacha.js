@@ -61,12 +61,10 @@ export default function Gacha() {
         //No iLevel 88 Heroic Gear!
         if (iLevel === "88" && tier === "heroic"){
             alert("As of now, heroic gear cannot be iLevel 88");
-            newErrors["88heroic"] = "iLevel 88 heroic gear cannot be acquired";
             return;
         }
-        if (tier == "epic" && substats.length < 4){
+        if (tier === "epic" && substats.length < 4){
             alert("Epic gear must have 4 substats");
-            newErrors["4substats"] = "Epic gear must have 4 substats";
             return;
         }
 
