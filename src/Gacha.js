@@ -72,13 +72,13 @@ export default function Gacha() {
             if (value === "") {
                 newErrors[key] = "This field is required";
             }
-            let validRanges = enhancement[key][iLevel][tier];
+            let validRanges = enhancement[value][iLevel][tier];
             let minValue = Math.min(...validRanges);
             let maxValue = Math.max(...validRanges);
             let input = parseInt(textInputs[key]);
 
             if (input < minValue || input > maxValue) {
-                alert(`Initial value for ${key} must be between ${minValue} and ${maxValue}.`);
+                alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
                 return;
               }
 
