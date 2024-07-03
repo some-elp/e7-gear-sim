@@ -14,16 +14,14 @@ export default function Gacha() {
     const [substats, setSubstats] = useState({
         substat1: "",
         substat2: "",
-        substat3: "",
-        substat4: ""
+        substat3: ""
     });
 
     //substat text input state
     const [textInputs, setTextInputs] = useState({
         substat1: "",
         substat2: "",
-        substat3: "",
-        substat4: ""
+        substat3: ""
     });
 
     //state for submit button
@@ -138,7 +136,7 @@ export default function Gacha() {
             {/*if not submitted then show */}
             {!submitted && (
                 <div>
-                    <SubstatDropdown substats={substats} handleSelect={handleSelect} />
+                    <SubstatDropdown substats={substats} handleSelect={handleSelect} tier={tier}/>
                     <TextInput
                         textInputs={textInputs}
                         handleTextInputChange={handleTextInputChange}

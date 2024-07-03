@@ -58,7 +58,7 @@ export default function SubstatDropdown({ substats, handleSelect }) {
                     <option value="defense">Flat Defense</option>
                     <option value="hp">Flat Health</option>
                 </select>
-                <select
+                {tier === "epic" && (<select
                     name="substat4"
                     value={substats.substat4}
                     onChange={handleSelect}
@@ -76,6 +76,7 @@ export default function SubstatDropdown({ substats, handleSelect }) {
                     <option value="defense">Flat Defense</option>
                     <option value="hp">Flat Health</option>
                 </select>
+                )}
             </form>
         </div>
     );
