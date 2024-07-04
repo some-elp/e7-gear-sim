@@ -122,6 +122,7 @@ export default function Gacha() {
     return (
         <div>
             <label>Equipment Level</label>
+            {!submitted && (
             <select
                 value={iLevel}
                 onChange={(e) => setILevel(e.target.value)}
@@ -129,9 +130,11 @@ export default function Gacha() {
                 <option value="85">85</option>
                 <option value="88">88</option>
             </select>
+            )}
             <p>{iLevel}</p>
 
             <label>Equipment Tier</label>
+            {!submitted && (
             <select
                 value={tier}
                 onChange={(e) => setTier(e.target.value)}    
@@ -139,6 +142,7 @@ export default function Gacha() {
                 <option value="epic">Epic/Red</option>
                 <option value="heroic">Heroic/Purple</option>
             </select>
+            )}
             <p>{tier}</p>
 
             <label>Substats:</label>
