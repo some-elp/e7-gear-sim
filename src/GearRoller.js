@@ -42,7 +42,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
 
             //update both substat list and textinputs
             substatHistory["substat4"] = substatName;
-            inputHistory[randomSubstat] = statValue;
+            inputHistory["substat4"] = statValue;
             newSubstat(substatHistory);
             handleEnhancement(inputHistory);
         }
