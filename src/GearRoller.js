@@ -26,9 +26,8 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
         if (enhanceCount === 3 && gearTier === "heroic") {
 
             //Get list of substats that are not already on the list
-            const arr1 = Object.keys(enhancement);
-            const arr2 = Object.keys(substats);
-            const leftovers = arr1.filter((element) => !arr2.includes(element));
+            let arr1 = Object.keys(enhancement);
+            const leftovers = arr1.filter((element) => !(substatKeys.includes(element)));
             console.log("Supposedly leftovers array: ", leftovers);
             console.log("all substats: " , arr1);
             console.log("already in list: " , arr2);
