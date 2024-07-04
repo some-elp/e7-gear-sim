@@ -29,6 +29,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
             const arr1 = Object.keys(enhancement);
             const arr2 = Object.keys(substats);
             const leftovers = arr1.filter((element) => !arr2.includes(element));
+            console.log(leftovers);
 
             //set substatName to one of the substats not on the list
             substatName = arr1[Math.floor(Math.random() * leftovers.length)];

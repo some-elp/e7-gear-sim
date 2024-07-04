@@ -80,10 +80,6 @@ export default function Gacha() {
             if (value === "") {
                 newErrors[key] = "This field is required";
             }
-            console.log([substats[key]]);
-            console.log(value);
-            console.log(iLevel);
-            console.log(tier);
             let validRanges = enhancement[substats[key]][iLevel][tier]["values"];
             let minValue = Math.min(...validRanges);
             let maxValue = Math.max(...validRanges);
@@ -169,8 +165,7 @@ export default function Gacha() {
                         textInputs={textInputs}
                         gearLevel={iLevel}
                         gearTier={tier}
-                        handleEnhancement={(updated) =>{
-                            console.log("handleEnhancement called with:", updated); handleEnhancement(updated);}}
+                        handleEnhancement={(updated) =>{handleEnhancement(updated);}}
                         newSubstat={(updated) => {newSubstat(updated);}}
                     />
                 </div>
