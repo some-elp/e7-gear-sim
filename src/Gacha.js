@@ -53,6 +53,11 @@ export default function Gacha() {
         setTextInputs(updated);
     };
 
+    //Handler for new substats
+    function newSubstat(updated){
+        setSubstats(updated);
+    }
+
 
     //handler for submit button
     function handleSubmit() {
@@ -162,6 +167,7 @@ export default function Gacha() {
                         gearTier={tier}
                         handleEnhancement={(updated) =>{
                             console.log("handleEnhancement called with:", updated); handleEnhancement(updated);}}
+                        newSubstat={(updated) => {newSubstat(updated);}}
                     />
                 </div>
             )}

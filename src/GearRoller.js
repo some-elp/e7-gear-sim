@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement }) {
+function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement, newSubstat }) {
     //TODO: iLevel difference seems to work. Purple gear next.
 
     console.log('GearRoller props:', { substats, gearLevel, gearTier, textInputs, handleEnhancement });
@@ -20,29 +20,66 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
         let substatName = substats[randomSubstat];
         let inputHistory = { ...textInputs };
 
-        if (substatName && enhancement[substatName] && enhancement[substatName][gearLevel]) {
+        //leaving this here in case I need it
+        //substatName && enhancement[substatName] && enhancement[substatName][gearLevel]
+        //If we are starting from +9 purple gear
+        if (enhanceCount === 3 && gearTier === "heroic") {
+
+            //Get list of substats that are not already on the list
+            const arr1 = Object.keys(enhancement);
+            const arr2 = Object.keys(substats);
+            const leftovers = arr1.filter((element) => !arr2.includes(element));
+
+            //set substatName to one of the substats not on the list
+            substatName = arr1[Math.floor(Math.random() * leftovers.length)];
+
+            //setup for changing substat list state
+            let substatHistory = { ...substats };
+
+            //same as regular enhancement
+            const { values, weights } = enhancement[substatName][gearLevel][gearTier];
+            let statValue = randomIncrease(values, weights);
+
+            //update both substat list and textinputs
+            substatHistory["substat4"] = substatName;
+            inputHistory[randomSubstat] = statValue;
+            newSubstat(substatHistory);
+            handleEnhancement(inputHistory);
+        }
+        else {
             const { values, weights } = enhancement[substatName][gearLevel][gearTier];
             let increment = randomIncrease(values, weights);
 
             inputHistory[randomSubstat] = (parseInt(inputHistory[randomSubstat])) + increment;
             handleEnhancement(inputHistory);
-            setEnhanceCount(enhanceCount + 1);
         }
         console.log(substats);
         console.log(textInputs);
-
+        setEnhanceCount(enhanceCount + 1);
     }
 
-    return (
-        <>
-            <p>{substats.substat1}: {textInputs.substat1}</p>
-            <p>{substats.substat2}: {textInputs.substat2}</p>
-            <p>{substats.substat3}: {textInputs.substat3}</p>
-            <p>{substats.substat4}: {textInputs.substat4}</p>
-            <button onClick={enhanceGear} disabled={enhanceCount >= 5}>Enhance</button>
-            {enhanceCount >= 5 && <p>Satisfied?</p>}
-        </>
-    );
+    if (enhanceCount <= 3 && gearTier === "heroic") {
+        return (
+            <>
+                <p>{substats.substat1}: {textInputs.substat1}</p>
+                <p>{substats.substat2}: {textInputs.substat2}</p>
+                <p>{substats.substat3}: {textInputs.substat3}</p>
+                <button onClick={enhanceGear} >Enhance</button>
+            </>
+        );
+    }
+    else {
+        return (
+            <>
+                <p>{substats.substat1}: {textInputs.substat1}</p>
+                <p>{substats.substat2}: {textInputs.substat2}</p>
+                <p>{substats.substat3}: {textInputs.substat3}</p>
+                <p>{substats.substat4}: {textInputs.substat4}</p>
+                <button onClick={enhanceGear} disabled={enhanceCount >= 5}>Enhance</button>
+                {enhanceCount >= 5 && <p>Satisfied?</p>}
+            </>
+        );
+    }
 
 }
 
