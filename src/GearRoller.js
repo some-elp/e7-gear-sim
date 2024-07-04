@@ -30,7 +30,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
             const leftovers = arr1.filter((element) => !(substatKeys.includes(element)));
             console.log("Supposedly leftovers array: ", leftovers);
             console.log("all substats: " , arr1);
-            console.log("already in list: " , arr2);
+            console.log("already in list: " , substatKeys);
 
             //set substatName to one of the substats not on the list
             substatName = arr1[Math.floor(Math.random() * leftovers.length)];
