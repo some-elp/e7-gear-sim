@@ -59,6 +59,7 @@ export default function Gacha() {
         const newErrors = {};
 
         //No iLevel 88 Heroic Gear!
+        console.log(substats.length);
         if (iLevel === "88" && tier === "heroic"){
             alert("As of now, heroic gear cannot be iLevel 88");
             return;
