@@ -51,8 +51,11 @@ body {
     margin-left: 10px;
   }
 
-  .gacha-container.next-to {
+  .gacha-container next-to {
     display:flex;
     flex-direction: row;
+  }
+  
+  .gacha-container next-to input {
     margin-left: 10px;
   }
