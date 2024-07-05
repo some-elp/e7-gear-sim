@@ -3,6 +3,7 @@ import SubstatDropdown from "./SubstatDropdown"
 import TextInput from "./TextInput";
 import GearRoller from "./GearRoller";
 import Enhancement from "./enhancement";
+import "./Gacha.css";
 
 export default function Gacha() {
     //states for the gear tier and json file.
