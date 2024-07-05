@@ -107,8 +107,8 @@ export default function Gacha() {
             let input = parseInt(textInputs[key]);
 
             if (input < minValue || input > maxValue) {
-                alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
-                newErrors[key] = "Starting stats out of bounds"
+                //alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
+                newErrors[key] = 'Initial value for ${value} must be between ${minValue} and ${maxValue}.';
               }
 
         });
@@ -196,13 +196,6 @@ export default function Gacha() {
                     handleTextInputChange={handleTextInputChange}
                     handleSubmit={handleSubmit}
                     errors={errors}/>
-                    {/*<TextInput
-                        textInputs={textInputs}
-                        handleTextInputChange={handleTextInputChange}
-                        handleSubmit={handleSubmit}
-                        errors={errors}
-                        tier={tier}
-                    />*/}
                 </div>
             )}
             {/*show substats and their values*/}
