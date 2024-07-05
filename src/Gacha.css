@@ -5,7 +5,7 @@ body {
     padding: 20px;
   }
   
-  .container {
+  .gacha-container {
     max-width: 600px;
     margin: 0 auto;
     background: #adbbd7;
@@ -14,24 +14,24 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  form {
+  .gacha-container form {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
   
-  label {
+  .gacha-container label {
     margin-bottom: 5px;
     font-weight: bold;
   }
   
-  select, input {
+  .gacha-container select, input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
   
-  button {
+  .gacha-container button {
     padding: 10px 15px;
     background-color: #007bff;
     color: white;
@@ -41,17 +41,17 @@ body {
     margin-top: 10px;
   }
   
-  button:disabled {
+  .gacha-container button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
   
-  button + button {
+  .gacha-container button + button {
     background-color: #28a745;
     margin-left: 10px;
   }
 
-  .next-to {
+  .gacha-container.next-to {
     display:flex;
     flex-direction: row;
   }

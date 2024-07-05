@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement, newSubstat, enhanceCount }) {
     //TODO: iLevel difference seems to work. Purple gear next.

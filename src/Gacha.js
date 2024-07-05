@@ -1,13 +1,12 @@
 import { useState } from "react";
 import SubstatDropdown from "./SubstatDropdown"
-import TextInput from "./TextInput";
 import GearRoller from "./GearRoller";
 import Enhancement from "./enhancement";
 import "./Gacha.css";
 
 export default function Gacha() {
     //states for the gear tier and json file.
-    const [enhancement, setEnhancement] = useState(Enhancement);
+    const enhancement = Enhancement;
     const [tier, setTier] = useState("heroic");
     const [iLevel, setILevel] = useState("85");
 
@@ -160,7 +159,7 @@ export default function Gacha() {
     }
 
     return (
-        <div className="container">
+        <div className="gacha-container">
             <label>Equipment Level</label>
             {!submitted && (
             <select
