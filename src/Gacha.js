@@ -160,7 +160,7 @@ export default function Gacha() {
     }
 
     return (
-        <div>
+        <div className="container">
             <label>Equipment Level</label>
             {!submitted && (
             <select
