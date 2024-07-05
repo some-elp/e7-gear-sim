@@ -85,7 +85,6 @@ export default function Gacha() {
         const newErrors = {};
 
         //No iLevel 88 Heroic Gear!
-        console.log(Object.keys(substats).length);
         if (iLevel === "88" && tier === "heroic"){
             alert("As of now, heroic gear cannot be iLevel 88");
             return;
@@ -161,7 +160,7 @@ export default function Gacha() {
 
     return (
         <div className="gacha-container">
-            <label>Equipment Level</label>
+            <label>Equipment Level: </label>
             {!submitted && (
             <select
                 value={iLevel}
@@ -173,7 +172,7 @@ export default function Gacha() {
             )}
             <p>{iLevel}</p>
 
-            <label>Equipment Tier</label>
+            <label>Equipment Tier: </label>
             {!submitted && (
             <select
                 value={tier}

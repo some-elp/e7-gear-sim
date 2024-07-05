@@ -54,4 +54,5 @@ body {
   .gacha-container.next-to {
     display:flex;
     flex-direction: row;
+    margin-left: 10px;
   }
