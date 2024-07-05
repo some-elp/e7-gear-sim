@@ -30,6 +30,9 @@ export default function Gacha() {
     //state for error list
     const [errors, setErrors] = useState({});
 
+    //state for enhancement level
+    const [enhanceCount, setEnhanceCount] = useState(0);
+
     //handler for substat dropdown
     const handleSelect = (event) => {
         const { name, value } = event.target;
@@ -51,6 +54,8 @@ export default function Gacha() {
     //Handler for substat enhancement?
     const handleEnhancement = (updated) => {
         setTextInputs(updated);
+        setEnhanceCount(enhanceCount + 1);
+
     };
 
     //Handler for new substats
@@ -115,6 +120,21 @@ export default function Gacha() {
 
     }
 
+    function resetAll(){
+        setEnhanceCount(0);
+        setSubstats({
+            "substat1": "",
+            "substat2": "",
+            "substat3": ""
+        });
+        setTextInputs({
+            "substat1": "",
+            "substat2": "",
+            "substat3": ""
+        });
+        setTier("heroic");
+    }
+
     return (
         <div>
             <label>Equipment Level</label>
@@ -167,7 +187,9 @@ export default function Gacha() {
                         gearTier={tier}
                         handleEnhancement={(updated) =>{handleEnhancement(updated);}}
                         newSubstat={(updated) => {newSubstat(updated);}}
+                        enhanceCount={enhanceCount}
                     />
+                    {enhanceCount >= 5 && <button onClick={resetAll}>Reset All</button>}
                 </div>
             )}
         </div>

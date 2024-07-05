@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement, newSubstat }) {
+function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement, newSubstat, enhanceCount }) {
     //TODO: iLevel difference seems to work. Purple gear next.
 
-    console.log('GearRoller props:', { substats, gearLevel, gearTier, textInputs, handleEnhancement });
-    const [enhanceCount, setEnhanceCount] = useState(0);
+
 
 
     /*
@@ -28,7 +27,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
             //Get list of substats that are not already on the list
             let arr1 = Object.keys(enhancement);
             let arr2 = Object.values(substats);
-
+            
             const leftovers = arr1.filter((element) => !arr2.includes(element));
             console.log("Supposedly leftovers array: ", leftovers);
             console.log("all substats: " , arr1);
@@ -59,7 +58,6 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
         }
         console.log(substats);
         console.log(textInputs);
-        setEnhanceCount(enhanceCount + 1);
     }
 
     if (enhanceCount <= 3 && gearTier === "heroic") {
