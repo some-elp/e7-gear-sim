@@ -99,6 +99,7 @@ export default function Gacha() {
         const hasDuplicates = Object.values(substats).some((item, index) => Object.values(substats).indexOf(item) !== index);
         Object.entries(substats).forEach(([key, value]) => {
             if (value === "") {
+                alert("Must select all substats");
                 newErrors[key] = "This field is required";
             }
             let validRanges = enhancement[substats[key]][iLevel][tier]["values"];
@@ -108,13 +109,13 @@ export default function Gacha() {
 
             if (input < minValue || input > maxValue) {
                 alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
-                newErrors[value] = "Starting stats out of bounds"
+                newErrors[key] = "Starting stats out of bounds"
               }
 
         });
         if(hasDuplicates){
+            alert("No duplicate substats");
             newErrors["dupes"] = "No duplicate substats";
-            
         }
 
 
