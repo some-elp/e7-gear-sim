@@ -24,6 +24,10 @@ export default function Gacha() {
         substat3: ""
     });
 
+    //states for 
+    const [revertSubs, setRevertSubs] = useState({});
+    const [revertTextInputs, setRevertTextInputs] = useState({});
+
     //state for submit button
     const [submitted, setSubmitted] = useState(false);
 
@@ -40,6 +44,12 @@ export default function Gacha() {
             ...prevSubstats,
             [name]: value
         }));
+        if(enhanceCount === 0){
+            setRevertSubs((prevSubstats) => ({
+                ...prevSubstats,
+                [name]: value
+            }));
+        }
     };
 
     // Handler for substat text input
@@ -49,6 +59,12 @@ export default function Gacha() {
             ...prevTextInputs,
             [name]: value,
         }));
+        if(enhanceCount === 0){
+            setRevertTextInputs((prevTextInputs) => ({
+                ...prevTextInputs,
+                [name]: value,
+            }));
+        }
     };
 
     //Handler for substat enhancement?
@@ -133,6 +149,13 @@ export default function Gacha() {
             "substat3": ""
         });
         setTier("heroic");
+        setSubmitted(false);
+    }
+
+    function revert(){
+        setEnhanceCount(0);
+        setSubstats(revertSubs);
+        setTextInputs(revertTextInputs);
     }
 
     return (
@@ -190,6 +213,7 @@ export default function Gacha() {
                         enhanceCount={enhanceCount}
                     />
                     {enhanceCount >= 5 && <button onClick={resetAll}>Reset All</button>}
+                    {enhanceCount >= 5 && <button onClick={revert}>Use Reroll Stone</button>}
                 </div>
             )}
         </div>

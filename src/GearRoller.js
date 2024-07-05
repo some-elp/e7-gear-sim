@@ -78,7 +78,6 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
                 <p>{substats.substat3}: {textInputs.substat3}</p>
                 <p>{substats.substat4}: {textInputs.substat4}</p>
                 <button onClick={enhanceGear} disabled={enhanceCount >= 5}>Enhance</button>
-                {enhanceCount >= 5 && <p>Satisfied?</p>}
             </>
         );
     }
