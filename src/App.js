@@ -7,10 +7,14 @@ import Gacha from "./Gacha";
 
 export default function App() {
   return (
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="learning" element={<Learning />} />
-      <Route path="gacha" element={<Gacha />} />
-    </Routes>
+    <BrowserRouter basename="/e7-gear-sim">
+      <main>
+        <Routes>
+          <Route index element = {<Home/>}/>
+          <Route path="learning" element = {<Learning/>}/>
+          <Route path="gacha" element = {<Gacha/>}/>
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
