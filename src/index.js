@@ -1,21 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes, } from "react-router-dom";
-import Home from './Home';
-import Learning from './Learning';
-import Gacha from './Gacha';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/e7-gear-sim'>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="learning" element={<Learning />} />
-        <Route path="gacha" element={<Gacha />} />
-      </Routes>
-    </BrowserRouter>
+      <App/>
   </React.StrictMode>
 );
 
