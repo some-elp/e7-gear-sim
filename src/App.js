@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, } from "react-router-dom";
 import Learning from "./Learning";
 import Home from "./Home";
 import Gacha from "./Gacha";
+import "./index.css";
 
 
 export default function App() {

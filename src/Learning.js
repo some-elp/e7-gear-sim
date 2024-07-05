@@ -1,5 +1,6 @@
 import Square from "./Square";
 import { useState } from "react";
+import "./index.css";
 
 export default function Learning() {
   const [xIsNext, setXIsNext] = useState(true);
