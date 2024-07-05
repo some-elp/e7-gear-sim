@@ -50,3 +50,8 @@ body {
     background-color: #28a745;
     margin-left: 10px;
   }
+
+  .next-to {
+    display:flex;
+    flex-direction: row;
+  }

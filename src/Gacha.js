@@ -190,14 +190,20 @@ export default function Gacha() {
             {/*if not submitted then show */}
             {!submitted && (
                 <div>
-                    <SubstatDropdown substats={substats} handleSelect={handleSelect} tier={tier}/>
-                    <TextInput
+                    <SubstatDropdown substats={substats}
+                    handleSelect={handleSelect} 
+                    tier={tier} 
+                    textInputs={textInputs}
+                    handleTextInputChange={handleTextInputChange}
+                    handleSubmit={handleSubmit}
+                    errors={errors}/>
+                    {/*<TextInput
                         textInputs={textInputs}
                         handleTextInputChange={handleTextInputChange}
                         handleSubmit={handleSubmit}
                         errors={errors}
                         tier={tier}
-                    />
+                    />*/}
                 </div>
             )}
             {/*show substats and their values*/}
