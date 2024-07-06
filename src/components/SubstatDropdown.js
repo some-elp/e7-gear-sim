@@ -24,8 +24,8 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     <option value="hp">Flat Health</option>
                 </select>
                 <input type="number" name="substat1" value={textInputs.substat1} onChange={handleTextInputChange} />
-                {errors["substat1"] && <p style={{ color: 'red' }}>{errors["substat1"]}</p>}
                 </div>
+                {errors["substat1"] && <p style={{ color: 'red' }}>{errors["substat1"]}</p>}
                 <div className="next-to">
                 <select
                     name="substat2"
@@ -46,8 +46,8 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     <option value="hp">Flat Health</option>
                 </select>
                 <input type="number" name="substat2" value={textInputs.substat2} onChange={handleTextInputChange} />
-                {errors["substat2"] && <p style={{ color: 'red' }}>{errors["substat2"]}</p>}
                 </div>
+                {errors["substat2"] && <p style={{ color: 'red' }}>{errors["substat2"]}</p>}
                 <div className="next-to">
                 <select
                     name="substat3"
@@ -68,8 +68,8 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     <option value="hp">Flat Health</option>
                 </select>
                 <input type="number" name="substat3" value={textInputs.substat3} onChange={handleTextInputChange} />
-                {errors["substat3"] && <p style={{ color: 'red' }}>{errors["substat3"]}</p>}
                 </div>
+                {errors["substat3"] && <p style={{ color: 'red' }}>{errors["substat3"]}</p>}
                 {tier === "epic" && (
                 <div className="next-to">
                 <select
@@ -91,9 +91,9 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     <option value="hp">Flat Health</option>
                 </select>
                 <input type="number" name="substat4" value={textInputs.substat4} onChange={handleTextInputChange} />
-                {errors["substat4"] && <p style={{ color: 'red' }}>{errors["substat4"]}</p>}
                 </div>
                 )}
+                {tier === "epic" && errors["substat4"] && <p style={{ color: 'red' }}>{errors["substat4"]}</p>}
             </form>
             <button onClick={handleSubmit}>Submit</button>
         </div>
