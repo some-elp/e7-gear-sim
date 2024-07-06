@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes, } from "react-router-dom";
-
-import Learning from "./Learning";
-import Home from "./Home";
-import Gacha from "./Gacha";
+import Learning from "./pages/Learning";
+import Home from "./pages/Home";
+import Gacha from "./pages/Gacha";
 
 
 export default function App() {

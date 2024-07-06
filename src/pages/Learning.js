@@ -1,6 +1,6 @@
-import Square from "./Square";
+import Square from "../components/Square";
 import { useState } from "react";
-import "./index.css";
+import "../css/index.css";
 
 export default function Learning() {
   const [xIsNext, setXIsNext] = useState(true);

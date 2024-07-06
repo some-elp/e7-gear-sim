@@ -1,8 +1,8 @@
 import { useState } from "react";
-import SubstatDropdown from "./SubstatDropdown"
-import GearRoller from "./GearRoller";
-import Enhancement from "./enhancement";
-import "./Gacha.css";
+import SubstatDropdown from "../components/SubstatDropdown"
+import GearRoller from "../components/GearRoller";
+import Enhancement from "../enhancement";
+import "../css/Gacha.css";
 
 export default function Gacha() {
     //states for the gear tier and json file.

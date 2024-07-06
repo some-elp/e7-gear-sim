@@ -71,7 +71,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                 {errors["substat3"] && <p style={{ color: 'red' }}>{errors["substat3"]}</p>}
                 </div>
                 {tier === "epic" && (
-                <div>
+                <div className="next-to">
                 <select
                     name="substat4"
                     value={substats.substat4}
