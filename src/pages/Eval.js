@@ -1,10 +1,8 @@
-import { useState } from "react";
-import SubstatDropdown from "../components/SubstatDropdown"
-import GearRoller from "../components/GearRoller";
 import Enhancement from "../enhancement";
-import "../css/Gacha.css";
+import SubstatDropdown from "../components/SubstatDropdown"
+import { useState } from "react";
 
-export default function Gacha() {
+function Eval() {
     //states for the gear tier and json file.
     const enhancement = Enhancement;
     const [tier, setTier] = useState("heroic");
@@ -24,10 +22,6 @@ export default function Gacha() {
         substat3: ""
     });
 
-    //states for 
-    const [revertSubs, setRevertSubs] = useState({});
-    const [revertTextInputs, setRevertTextInputs] = useState({});
-
     //state for submit button
     const [submitted, setSubmitted] = useState(false);
 
@@ -44,12 +38,12 @@ export default function Gacha() {
             ...prevSubstats,
             [name]: value
         }));
-        if(enhanceCount === 0){
+        /*if (enhanceCount === 0) {
             setRevertSubs((prevSubstats) => ({
                 ...prevSubstats,
                 [name]: value
             }));
-        }
+        }*/
     };
 
     // Handler for substat text input
@@ -59,37 +53,24 @@ export default function Gacha() {
             ...prevTextInputs,
             [name]: value,
         }));
-        if(enhanceCount === 0){
+        /*if (enhanceCount === 0) {
             setRevertTextInputs((prevTextInputs) => ({
                 ...prevTextInputs,
                 [name]: value,
             }));
-        }
+        }*/
     };
-
-    //Handler for substat enhancement?
-    const handleEnhancement = (updated) => {
-        setTextInputs(updated);
-        setEnhanceCount(enhanceCount + 1);
-
-    };
-
-    //Handler for new substats
-    function newSubstat(updated){
-        setSubstats(updated);
-    }
-
 
     //handler for submit button
     function handleSubmit() {
         const newErrors = {};
 
         //No iLevel 88 Heroic Gear!
-        if (iLevel === "88" && tier === "heroic"){
+        if (iLevel === "88" && tier === "heroic") {
             alert("As of now, heroic gear cannot be iLevel 88");
             return;
         }
-        if (tier === "epic" && Object.keys(substats).length < 4){
+        if (tier === "epic" && Object.keys(substats).length < 4) {
             alert("Epic gear must have 4 substats");
             return;
         }
@@ -109,11 +90,11 @@ export default function Gacha() {
             if (input < minValue || input > maxValue) {
                 //alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
                 newErrors[key] = `Initial value for ${value} must be between ${minValue} and ${maxValue}.`;
-                
-              }
+
+            }
 
         });
-        if(hasDuplicates){
+        if (hasDuplicates) {
             alert("No duplicate substats");
             newErrors["dupes"] = "No duplicate substats";
         }
@@ -126,10 +107,10 @@ export default function Gacha() {
             }
         });
 
-        if(Object.keys(newErrors).length > 0){
+        if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
         }
-        else{
+        else {
             setErrors({});
             setSubmitted(true);
         }
@@ -138,7 +119,7 @@ export default function Gacha() {
     }
 
     //set page to default (as if refreshed)
-    function resetAll(){
+    function resetAll() {
         setEnhanceCount(0);
         setSubstats({
             "substat1": "",
@@ -154,36 +135,30 @@ export default function Gacha() {
         setSubmitted(false);
     }
 
-    //go back to +0 gear
-    function revert(){
-        setEnhanceCount(0);
-        setSubstats(revertSubs);
-        setTextInputs(revertTextInputs);
-    }
 
     return (
         <div className="gacha-container">
             <label>Equipment Level: </label>
             {!submitted && (
-            <select
-                value={iLevel}
-                onChange={(e) => setILevel(e.target.value)}
-            >
-                <option value="85">85</option>
-                <option value="88">88</option>
-            </select>
+                <select
+                    value={iLevel}
+                    onChange={(e) => setILevel(e.target.value)}
+                >
+                    <option value="85">85</option>
+                    <option value="88">88</option>
+                </select>
             )}
             <p>{iLevel}</p>
 
             <label>Equipment Tier: </label>
             {!submitted && (
-            <select
-                value={tier}
-                onChange={(e) => setTier(e.target.value)}    
-            >
-                <option value="epic">Epic/Red</option>
-                <option value="heroic">Heroic/Purple</option>
-            </select>
+                <select
+                    value={tier}
+                    onChange={(e) => setTier(e.target.value)}
+                >
+                    <option value="epic">Epic/Red</option>
+                    <option value="heroic">Heroic/Purple</option>
+                </select>
             )}
             <p>{tier}</p>
 
@@ -193,31 +168,36 @@ export default function Gacha() {
             {!submitted && (
                 <div>
                     <SubstatDropdown substats={substats}
-                    handleSelect={handleSelect} 
-                    tier={tier} 
-                    textInputs={textInputs}
-                    handleTextInputChange={handleTextInputChange}
-                    handleSubmit={handleSubmit}
-                    errors={errors}/>
+                        handleSelect={handleSelect}
+                        tier={tier}
+                        textInputs={textInputs}
+                        handleTextInputChange={handleTextInputChange}
+                        handleSubmit={handleSubmit}
+                        errors={errors} />
                 </div>
             )}
             {/*show substats and their values*/}
             {submitted && (
                 <div>
-                    <GearRoller 
+                    <p>functionality to be added</p>
+                    <button onClick={resetAll}>Reset All</button>
+                    {/*<GearRoller
                         enhancement={enhancement}
                         substats={substats}
                         textInputs={textInputs}
                         gearLevel={iLevel}
                         gearTier={tier}
-                        handleEnhancement={(updated) =>{handleEnhancement(updated);}}
-                        newSubstat={(updated) => {newSubstat(updated);}}
+                        handleEnhancement={(updated) => { handleEnhancement(updated); }}
+                        newSubstat={(updated) => { newSubstat(updated); }}
                         enhanceCount={enhanceCount}
                     />
                     {enhanceCount >= 5 && <button onClick={resetAll}>Reset All</button>}
                     {enhanceCount >= 5 && <button onClick={revert}>Use Reroll Stone</button>}
+                    */}
                 </div>
             )}
         </div>
     )
 }
+
+export default Eval;
