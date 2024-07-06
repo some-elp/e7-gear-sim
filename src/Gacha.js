@@ -109,6 +109,7 @@ export default function Gacha() {
             if (input < minValue || input > maxValue) {
                 //alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
                 newErrors[key] = `Initial value for ${value} must be between ${minValue} and ${maxValue}.`;
+                
               }
 
         });
