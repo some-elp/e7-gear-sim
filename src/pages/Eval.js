@@ -179,6 +179,21 @@ function Eval() {
             {/*show substats and their values*/}
             {submitted && (
                 <div>
+                    {tier === "heroic" && (
+                        <>
+                            <p>{substats.substat1}: {textInputs.substat1}</p>
+                            <p>{substats.substat2}: {textInputs.substat2}</p>
+                            <p>{substats.substat3}: {textInputs.substat3}</p>
+                        </>
+                    )}
+                    {tier === "epic" && (
+                        <>
+                            <p>{substats.substat1}: {textInputs.substat1}</p>
+                            <p>{substats.substat2}: {textInputs.substat2}</p>
+                            <p>{substats.substat3}: {textInputs.substat3}</p>
+                            <p>{substats.substat4}: {textInputs.substat4}</p>
+                        </>
+                    )}
                     <p>functionality to be added</p>
                     <button onClick={resetAll}>Reset All</button>
                     {/*<GearRoller
