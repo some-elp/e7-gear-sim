@@ -107,7 +107,6 @@ export default function Gacha() {
             let input = parseInt(textInputs[key]);
 
             if (input < minValue || input > maxValue) {
-                //alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
                 newErrors[key] = `Initial value for ${value} must be between ${minValue} and ${maxValue}.`;
                 
               }

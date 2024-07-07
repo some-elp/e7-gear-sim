@@ -1,6 +1,7 @@
 import Enhancement from "../enhancement";
 import SubstatDropdown from "../components/SubstatDropdown"
 import { useState } from "react";
+import MainstatSelector from "../components/MainstatSelector";
 
 function Eval() {
     //states for the gear tier and json file.
@@ -31,6 +32,20 @@ function Eval() {
     //state for enhancement level
     const [enhanceCount, setEnhanceCount] = useState(0);
 
+    //state for gear piece
+    const[piece, setPiece] = useState("helmet");
+
+    //state for gear set
+    const[gearSet, setGearSet] = useState("speed");
+
+    //state for main stat
+    const[mainstat, setMainstat] = useState("hp");
+
+    //function to pass to mainstatselector
+    function selectMainstat(updated){
+        setMainstat(updated);
+    }
+
     //handler for substat dropdown
     const handleSelect = (event) => {
         const { name, value } = event.target;
@@ -38,12 +53,6 @@ function Eval() {
             ...prevSubstats,
             [name]: value
         }));
-        /*if (enhanceCount === 0) {
-            setRevertSubs((prevSubstats) => ({
-                ...prevSubstats,
-                [name]: value
-            }));
-        }*/
     };
 
     // Handler for substat text input
@@ -53,12 +62,6 @@ function Eval() {
             ...prevTextInputs,
             [name]: value,
         }));
-        /*if (enhanceCount === 0) {
-            setRevertTextInputs((prevTextInputs) => ({
-                ...prevTextInputs,
-                [name]: value,
-            }));
-        }*/
     };
 
     //handler for submit button
@@ -88,9 +91,7 @@ function Eval() {
             let input = parseInt(textInputs[key]);
 
             if (input < minValue || input > maxValue) {
-                //alert(`Initial value for ${value} must be between ${minValue} and ${maxValue}.`);
                 newErrors[key] = `Initial value for ${value} must be between ${minValue} and ${maxValue}.`;
-
             }
 
         });
@@ -162,6 +163,56 @@ function Eval() {
             )}
             <p>{tier}</p>
 
+            <label>Set:</label>
+            {!submitted && (
+                <select
+                    value={gearSet}
+                    onChange={(e) => setGearSet(e.target.value)}
+                >
+                    <option value="">-Pick Something-</option>
+                    <option value="attack">Attack</option>
+                    <option value="defense">Defense</option>
+                    <option value="health">Health</option>
+                    <option value="speed">Speed</option>
+                    <option value="critical">Critical</option>
+                    <option value="destruction">Destruction</option>
+                    <option value="hit">Hit</option>
+                    <option value="resist">Resist</option>
+                    <option value="lifesteal">Lifesteal</option>
+                    <option value="counter">Counter</option>
+                    <option value="unity">Unity</option>
+                    <option value="immunity">Immunity</option>
+                    <option value="rage">Rage</option>
+                    <option value="penetration">Penetration</option>
+                    <option value="revenge">Revenge</option>
+                    <option value="Injury">Injury</option>
+                    <option value="protection">Protection</option>
+                    <option value="torrent">Torrent</option>
+                </select>
+            )}
+            <p>{gearSet}</p>
+
+            <label>Piece:</label>
+            {!submitted && (
+                <select
+                    value={piece}
+                    onChange={(e) => setPiece(e.target.value)}
+                >
+                    <option value="">-Pick Something-</option>
+                    <option value="sword">Sword</option>
+                    <option value="helmet">Helmet</option>
+                    <option value="chestpiece">Chestpiece</option>
+                    <option value="necklace">Necklace</option>
+                    <option value="ring">Ring</option>
+                    <option value="boots">Boots</option>
+                </select>
+            )}
+            <p>{piece}</p>
+
+            <label>Mainstat:</label>
+            {!submitted && <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>}
+            <p>{mainstat}</p>
+
             <label>Substats:</label>
 
             {/*if not submitted then show */}
@@ -196,19 +247,6 @@ function Eval() {
                     )}
                     <p>functionality to be added</p>
                     <button onClick={resetAll}>Reset All</button>
-                    {/*<GearRoller
-                        enhancement={enhancement}
-                        substats={substats}
-                        textInputs={textInputs}
-                        gearLevel={iLevel}
-                        gearTier={tier}
-                        handleEnhancement={(updated) => { handleEnhancement(updated); }}
-                        newSubstat={(updated) => { newSubstat(updated); }}
-                        enhanceCount={enhanceCount}
-                    />
-                    {enhanceCount >= 5 && <button onClick={resetAll}>Reset All</button>}
-                    {enhanceCount >= 5 && <button onClick={revert}>Use Reroll Stone</button>}
-                    */}
                 </div>
             )}
         </div>
