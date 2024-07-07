@@ -163,7 +163,7 @@ function Eval() {
             )}
             <p>{tier}</p>
 
-            <label>Set:</label>
+            <label>Set: </label>
             {!submitted && (
                 <select
                     value={gearSet}
@@ -175,8 +175,8 @@ function Eval() {
                     <option value="health">Health</option>
                     <option value="speed">Speed</option>
                     <option value="critical">Critical</option>
-                    <option value="destruction">Destruction</option>
                     <option value="hit">Hit</option>
+                    <option value="destruction">Destruction</option>
                     <option value="resist">Resist</option>
                     <option value="lifesteal">Lifesteal</option>
                     <option value="counter">Counter</option>
@@ -185,14 +185,14 @@ function Eval() {
                     <option value="rage">Rage</option>
                     <option value="penetration">Penetration</option>
                     <option value="revenge">Revenge</option>
-                    <option value="Injury">Injury</option>
+                    <option value="injury">Injury</option>
                     <option value="protection">Protection</option>
                     <option value="torrent">Torrent</option>
                 </select>
             )}
             <p>{gearSet}</p>
 
-            <label>Piece:</label>
+            <label>Piece: </label>
             {!submitted && (
                 <select
                     value={piece}
@@ -209,8 +209,12 @@ function Eval() {
             )}
             <p>{piece}</p>
 
-            <label>Mainstat:</label>
-            {!submitted && <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>}
+            <label>Mainstat: </label>
+            {!submitted && (
+                <div>
+                    <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>
+                </div>
+            )}
             <p>{mainstat}</p>
 
             <label>Substats:</label>
