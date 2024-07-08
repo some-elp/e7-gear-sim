@@ -1,4 +1,6 @@
 export default function MainstatSelector(piece, mainstat, selectMainstat) {
+    console.log('MainStatSelector rendered with piece:', piece);
+
     if (piece === "sword") {
         return (
             <div>

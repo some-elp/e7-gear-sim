@@ -210,7 +210,7 @@ export default function Eval() {
             <p>{piece}</p>
 
             <label>Mainstat: </label>
-            {!submitted && (
+            {!submitted && (console.log("MainstatSelector called.")) && (
                     <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>
             )}
             <p>{mainstat}</p>
