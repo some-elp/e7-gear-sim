@@ -23,15 +23,23 @@ const GearSetList = {
         "Debuffer",
         "PvE DPS"
     ],
-    "destruction": {
-
-    },
-    "resist": {
-
-    },
-    "lifesteal": {
-
-    },
+    "destruction": [
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "DPS",
+        "PvE DPS"
+    ],
+    "resist": [
+        "Soulweaver/Tank"
+    ],
+    "lifesteal": [
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "Lifesteal DPS",
+        "PvE DPS"
+    ],
     "counter": {
 
     },
