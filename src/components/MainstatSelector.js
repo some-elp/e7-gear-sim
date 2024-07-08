@@ -1,7 +1,27 @@
-export default function MainstatSelector(piece, mainstat, selectMainstat) {
+export default function MainstatSelector(piece) {
     console.log('MainStatSelector rendered with piece:', piece);
 
     if (piece === "sword") {
+        return (
+            <div>
+                <select>
+                    <option value="">-Pick Something-</option>
+                    <option value="attack">Attack</option>
+                </select>
+            </div>
+        );
+    }
+    if (piece === "helmet") {
+        return (
+            <div>
+                <select>
+                    <option value="">-Pick Something-</option>
+                    <option value="health">Health</option>
+                </select>
+            </div>
+        );
+    }
+    {/*if (piece === "sword") {
         return (
             <div>
                 <select
@@ -98,6 +118,6 @@ export default function MainstatSelector(piece, mainstat, selectMainstat) {
                 </select>
             </div>
         );
-    }
-    return null;
+    }*/}
+    return <p>Why is this thing not working</p>;
 }
