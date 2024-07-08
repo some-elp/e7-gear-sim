@@ -223,6 +223,7 @@ export default function Eval() {
                         handleSelect={handleSelect}
                         tier={tier}
                         textInputs={textInputs}
+                        piece={piece}
                         handleTextInputChange={handleTextInputChange}
                         handleSubmit={handleSubmit}
                         errors={errors} />
