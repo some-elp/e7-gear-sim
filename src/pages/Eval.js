@@ -210,9 +210,10 @@ export default function Eval() {
             <p>{piece}</p>
 
             <label>Mainstat: </label>
-            {!submitted && (console.log("MainstatSelector called.")) && (
+            {!submitted && (piece !== "") && (
                 <div>
                     <MainstatSelector piece={piece}/>
+                    <p>What is going on</p>
                 </div>
             )}
             <p>{mainstat}</p>

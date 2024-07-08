@@ -12,12 +12,17 @@ const GearSetList = {
         "PvE DPS",
         "Burn/Pure Attack-Scaling DPS"
     ],
-    "critical": {
-
-    },
-    "hit": {
-
-    },
+    "critical": [
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "DPS",
+        "PvE DPS"
+    ],
+    "hit": [
+        "Debuffer",
+        "PvE DPS"
+    ],
     "destruction": {
 
     },
