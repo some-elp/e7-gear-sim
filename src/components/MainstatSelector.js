@@ -23,7 +23,7 @@ export default function MainstatSelector(piece, mainstat, selectMainstat) {
                     <option value="health">Health</option>
                 </select>
             </div>
-        )
+        );
     }
     if (piece === "chestpiece") {
         return (
@@ -36,7 +36,7 @@ export default function MainstatSelector(piece, mainstat, selectMainstat) {
                     <option value="defense">Defense</option>
                 </select>
             </div>
-        )
+        );
     }
     if (piece === "necklace") {
         return (
@@ -56,7 +56,7 @@ export default function MainstatSelector(piece, mainstat, selectMainstat) {
                     <option value="health">Health</option>
                 </select>
             </div>
-        )
+        );
     }
     if (piece === "ring") {
         return (
@@ -76,7 +76,7 @@ export default function MainstatSelector(piece, mainstat, selectMainstat) {
                     <option value="health">Health</option>
                 </select>
             </div>
-        )
+        );
     }
     if (piece === "boots") {
         return (
@@ -95,6 +95,6 @@ export default function MainstatSelector(piece, mainstat, selectMainstat) {
                     <option value="health">Health</option>
                 </select>
             </div>
-        )
+        );
     }
 }
