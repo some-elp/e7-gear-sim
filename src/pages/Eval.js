@@ -3,7 +3,7 @@ import SubstatDropdown from "../components/SubstatDropdown"
 import { useState } from "react";
 import MainstatSelector from "../components/MainstatSelector";
 
-function Eval() {
+export default function Eval() {
     //states for the gear tier and json file.
     const enhancement = Enhancement;
     const [tier, setTier] = useState("heroic");
@@ -33,13 +33,13 @@ function Eval() {
     const [enhanceCount, setEnhanceCount] = useState(0);
 
     //state for gear piece
-    const[piece, setPiece] = useState("helmet");
+    const[piece, setPiece] = useState("");
 
     //state for gear set
-    const[gearSet, setGearSet] = useState("speed");
+    const[gearSet, setGearSet] = useState("");
 
     //state for main stat
-    const[mainstat, setMainstat] = useState("hp");
+    const[mainstat, setMainstat] = useState("");
 
     //function to pass to mainstatselector
     function selectMainstat(updated){
@@ -210,9 +210,9 @@ function Eval() {
             <p>{piece}</p>
 
             <label>Mainstat: </label>
-            {!submitted && (
+            {/*{!submitted && (
                     <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>
-            )}
+            )}*/}
             <p>{mainstat}</p>
 
             <label>Substats:</label>
@@ -252,5 +252,3 @@ function Eval() {
         </div>
     )
 }
-
-export default Eval;
