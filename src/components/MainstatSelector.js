@@ -1,4 +1,4 @@
-export default function MainstatSelector(piece) {
+export default function MainstatSelector({piece}) {
     console.log('MainStatSelector rendered with piece:', piece);
 
     if (piece === "sword") {

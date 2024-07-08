@@ -1,7 +1,7 @@
 import Enhancement from "../enhancement";
 import SubstatDropdown from "../components/SubstatDropdown"
 import { useState } from "react";
-import MainstatSelector from "../components/MainstatSelector";
+import MainstatSelector from "../components/MainstatSelector"
 
 export default function Eval() {
     //states for the gear tier and json file.
