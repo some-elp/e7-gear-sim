@@ -21,6 +21,7 @@ export default function MainstatSelector({piece}) {
             </div>
         );
     }
+    return (<p>Why is this thing not working</p>);
     {/*if (piece === "sword") {
         return (
             <div>
@@ -119,5 +120,4 @@ export default function MainstatSelector({piece}) {
             </div>
         );
     }*/}
-    return <p>Why is this thing not working</p>;
 }
