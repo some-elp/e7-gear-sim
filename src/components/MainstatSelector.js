@@ -97,4 +97,5 @@ export default function MainstatSelector(piece, mainstat, selectMainstat) {
             </div>
         );
     }
+    return null;
 }
