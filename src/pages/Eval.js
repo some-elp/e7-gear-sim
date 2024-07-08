@@ -33,7 +33,7 @@ export default function Eval() {
     const [enhanceCount, setEnhanceCount] = useState(0);
 
     //state for gear piece
-    const[piece, setPiece] = useState("");
+    const[piece, setPiece] = useState("helmet");
 
     //state for gear set
     const[gearSet, setGearSet] = useState("");
