@@ -38,5 +38,9 @@ const Archetypes = {
         "sets": ["attack", "speed", "immunity"],
         "mainstats": ["attack%", "speed"],
         "substats": ["attack%", "hp%", "defense%", "speed"]
+    },
+    "PvE DPS": {
+        "mainstats": ["critdamage, critchance, attack%, speed, effectiveness"],
+        "substats": ["critdamage, critchance, attack%, speed, effectiveness"]
     }
 }

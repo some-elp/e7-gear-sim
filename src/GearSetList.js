@@ -1,7 +1,5 @@
 const GearSetList = {
-    "attack": {
-
-    },
+    "attack": ["PvE DPS", "Burn/Pure Attack-Scaling DPS", "Attack-Scaling Bruiser", "DPS"],
     "defense": {
 
     },
@@ -51,6 +49,6 @@ const GearSetList = {
 
     },
     "torrent": {
-        
+
     }
 }
