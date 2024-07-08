@@ -211,9 +211,7 @@ function Eval() {
 
             <label>Mainstat: </label>
             {!submitted && (
-                <div>
                     <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>
-                </div>
             )}
             <p>{mainstat}</p>
 
@@ -221,7 +219,6 @@ function Eval() {
 
             {/*if not submitted then show */}
             {!submitted && (
-                <div>
                     <SubstatDropdown substats={substats}
                         handleSelect={handleSelect}
                         tier={tier}
@@ -229,7 +226,6 @@ function Eval() {
                         handleTextInputChange={handleTextInputChange}
                         handleSubmit={handleSubmit}
                         errors={errors} />
-                </div>
             )}
             {/*show substats and their values*/}
             {submitted && (
