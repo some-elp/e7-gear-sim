@@ -16,12 +16,14 @@ const GearSetList = {
         "HP-Scaling Bruiser",
         "Attack-Scaling Bruiser",
         "Defense-Scaling Bruiser",
+        "Lifesteal DPS",
         "DPS",
         "PvE DPS"
     ],
     "hit": [
         "Debuffer",
-        "PvE DPS"
+        "PvE DPS",
+        "Tamarinne"
     ],
     "destruction": [
         "HP-Scaling Bruiser",
@@ -31,7 +33,8 @@ const GearSetList = {
         "PvE DPS"
     ],
     "resist": [
-        "Soulweaver/Tank"
+        "Soulweaver/Tank",
+        "Tamarinne"
     ],
     "lifesteal": [
         "HP-Scaling Bruiser",
@@ -40,31 +43,48 @@ const GearSetList = {
         "Lifesteal DPS",
         "PvE DPS"
     ],
-    "counter": {
-
-    },
-    "unity": {
-
-    },
-    "immunity": {
-
-    },
-    "rage": {
-
-    },
-    "penetration": {
-
-    },
-    "revenge": {
-
-    },
-    "injury": {
-
-    },
-    "protection": {
-
-    },
-    "torrent": {
-
-    }
+    "counter": [
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "Soulweaver/Tank",
+    ],
+    "unity": [
+        "PvE DPS"
+    ],
+    "immunity": [
+        "Soulweaver/Tank",
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "Debuffer",
+        "DPS",
+        "PvE DPS",
+        "Burn/Pure Attack-Scaling DPS"
+    ],
+    "rage": [
+        "PvE DPS"
+    ],
+    "penetration": [
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "DPS",
+        "PvE DPS"
+    ],
+    "revenge": [
+        "Soulwever/Tank"
+    ],
+    "injury": [
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser"
+    ],
+    "protection": [
+        "Soulweaver/Tank"
+    ],
+    "torrent": [
+        "DPS",
+        "Burn/Pure Attack-Scaling DPS"
+    ]
 }

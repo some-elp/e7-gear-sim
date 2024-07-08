@@ -46,6 +46,12 @@ export default function Eval() {
         setMainstat(event.target.value);
     }
 
+    //handler for piece selection
+    const selectPiece = (event) => {
+        setPiece(event.target.value);
+        setMainstat('');
+    }
+
     //handler for substat dropdown
     const handleSelect = (event) => {
         const { name, value } = event.target;
@@ -196,7 +202,7 @@ export default function Eval() {
             {!submitted && (
                 <select
                     value={piece}
-                    onChange={(e) => setPiece(e.target.value) && setMainstat('')}
+                    onChange={selectPiece}
                 >
                     <option value="">-Pick Something-</option>
                     <option value="sword">Sword</option>
@@ -213,7 +219,6 @@ export default function Eval() {
             {!submitted && (piece !== "") && (
                 <div>
                     <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>
-                    <p>test</p>
                 </div>
             )}
             <p>{mainstat}</p>
