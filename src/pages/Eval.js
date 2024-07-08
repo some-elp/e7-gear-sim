@@ -33,7 +33,7 @@ export default function Eval() {
     const [enhanceCount, setEnhanceCount] = useState(0);
 
     //state for gear piece
-    const[piece, setPiece] = useState("helmet");
+    const[piece, setPiece] = useState("");
 
     //state for gear set
     const[gearSet, setGearSet] = useState("");
@@ -42,7 +42,7 @@ export default function Eval() {
     const[mainstat, setMainstat] = useState("");
 
     //function to pass to mainstatselector
-    const selectMainstat= (event) => {
+    const selectMainstat = (event) => {
         setMainstat(event.target.value);
     }
 
@@ -212,8 +212,8 @@ export default function Eval() {
             <label>Mainstat: </label>
             {!submitted && (piece !== "") && (
                 <div>
-                    <MainstatSelector piece={piece}/>
-                    <p>What is going on</p>
+                    <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>
+                    <p>test</p>
                 </div>
             )}
             <p>{mainstat}</p>
@@ -221,7 +221,7 @@ export default function Eval() {
             <label>Substats:</label>
 
             {/*if not submitted then show */}
-            {!submitted && (
+            {!submitted && (piece !== "") && (
                     <SubstatDropdown substats={substats}
                         handleSelect={handleSelect}
                         tier={tier}
