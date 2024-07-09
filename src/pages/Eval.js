@@ -1,7 +1,8 @@
 import Enhancement from "../enhancement";
-import SubstatDropdown from "../components/SubstatDropdown"
+import SubstatDropdown from "../components/SubstatDropdown";
 import { useState } from "react";
-import MainstatSelector from "../components/MainstatSelector"
+import MainstatSelector from "../components/MainstatSelector";
+import GearEval from "../components/GearEval";
 
 export default function Eval() {
     //states for the gear tier and json file.
@@ -259,7 +260,11 @@ export default function Eval() {
                             <p>{substats.substat4}: {textInputs.substat4}</p>
                         </>
                     )}
-                    <p>functionality to be added</p>
+                </div>
+            )}
+            {submitted && (
+                <div>
+                    <GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats}/>
                     <button onClick={resetAll}>Reset All</button>
                 </div>
             )}
