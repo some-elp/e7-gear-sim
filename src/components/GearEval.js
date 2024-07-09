@@ -2,7 +2,7 @@ import GearSetList from "../GearSetList";
 import Archetypes from "../Archetypes";
 import { useState } from "react";
 
-export default function GearEval(gearSet, piece, mainstat, substats){
+export default function GearEval({gearSet, piece, mainstat, substats}){
     /*
     Depending on what set and piece has been selected, get a list of
     potential archetypes that use that set. Use a loop that go through the
@@ -31,6 +31,7 @@ export default function GearEval(gearSet, piece, mainstat, substats){
         console.log({gearSet}, {piece}, {mainstat}, {substats});
 
         for(let archetype in gearsetArchetypesList){
+            goodSubstatCount = 0;
             for(let goodSubstat in archetypes[archetype]["substats"]){
                 if(Object.values(substats).includes(goodSubstat)){
                     goodSubstatCount++;
@@ -40,7 +41,7 @@ export default function GearEval(gearSet, piece, mainstat, substats){
             
             if(goodSubstatCount >= 3){
                 console.log(`Try to add ${archetype} to the list.`);
-                setMatchingArch([...matchingArch],archetype);
+                setMatchingArch((prev) => [...prev, archetype]);
             }
 
         }
