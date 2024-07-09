@@ -263,10 +263,6 @@ export default function Eval() {
                             <p>{substats.substat4}: {textInputs.substat4}</p>
                         </>
                     )}
-                </div>
-            )}
-            {submitted && (
-                <div>
                     <GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats}/>
                     <button onClick={resetAll}>Reset All</button>
                 </div>
