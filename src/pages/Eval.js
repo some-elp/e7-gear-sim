@@ -85,11 +85,16 @@ export default function Eval() {
         }
 
         //dropdown validation
+        console.log(mainstat);
         const hasDuplicates = Object.values(substats).some((item, index) => Object.values(substats).indexOf(item) !== index);
         Object.entries(substats).forEach(([key, value]) => {
             if (value === "") {
                 alert("Must select all substats");
                 newErrors[key] = "This field is required";
+            }
+            if (value === mainstat) {
+                alert("Mainstat and substats cannot be the same");
+                newErrors[key] = "Mainstat and substats cannot be the same";
             }
             let validRanges = enhancement[substats[key]][iLevel][tier]["values"];
             let minValue = Math.min(...validRanges);
