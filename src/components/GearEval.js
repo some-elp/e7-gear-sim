@@ -27,7 +27,8 @@ export default function GearEval(gearSet, piece, mainstat, substats){
     if(piece === "sword" || piece === "helmet" || piece === "chestpiece"){
         let gearsetArchetypesList = gearSetList[gearSet];
         let goodSubstatCount = 0;
-        console.log(gearsetArchetypesList);
+        console.log("Line 30: ", gearsetArchetypesList);
+        console.log({gearSet}, {piece}, {mainstat}, {substats});
 
         for(let archetype in gearsetArchetypesList){
             for(let goodSubstat in archetypes[archetype]["substats"]){
