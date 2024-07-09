@@ -145,6 +145,9 @@ export default function Eval() {
             "substat3": ""
         });
         setTier("heroic");
+        setGearSet("");
+        setPiece("");
+        setMainstat("");
         setSubmitted(false);
     }
 

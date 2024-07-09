@@ -30,7 +30,7 @@ export default function GearEval(gearSet, piece, mainstat, substats){
 
         for(let archetype in gearsetArchetypesList){
             for(let goodSubstat in archetypes[archetype]["substats"]){
-                if(substats.includes(goodSubstat)){
+                if(Object.values(substats).includes(goodSubstat)){
                     goodSubstatCount++;
                     console.log(`This piece has ${goodSubstatCount} good substats for ${archetype}`);
                 }
