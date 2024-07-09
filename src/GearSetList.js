@@ -87,4 +87,5 @@ const GearSetList = {
         "DPS",
         "Burn/Pure Attack-Scaling DPS"
     ]
-}
+};
+export default GearSetList;
