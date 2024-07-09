@@ -21,6 +21,7 @@ export default function GearEval(gearSet, piece, mainstat, substats){
     const gearSetList = GearSetList;
     const archetypes = Archetypes;
     const [matchingArch, setMatchingArch] = useState([]);
+    console.log("GearEval called with: set: ", {gearSet}, "piece: ", {piece}, "mainstat: ", {mainstat}, "substats: ", {substats});
 
 
     if(piece === "sword" || piece === "helmet" || piece === "chestpiece"){

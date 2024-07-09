@@ -1,16 +1,10 @@
 
 function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement, newSubstat, enhanceCount }) {
-    //TODO: iLevel difference seems to work. Purple gear next.
-
-
-
-
     /*
     grab the substats and match them to the text inputs
     for each type of substat, decide what the roll range is
     using the roll ranges, add random value (determined by sg)
     to the list of substat values. Stop when gear is +15.
-    
     */
     function enhanceGear() {
         let substatKeys = Object.keys(substats);
@@ -18,8 +12,6 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
         let substatName = substats[randomSubstat];
         let inputHistory = { ...textInputs };
 
-        //leaving this here in case I need it
-        //substatName && enhancement[substatName] && enhancement[substatName][gearLevel]
         //If we are starting from +9 purple gear
         if (enhanceCount === 3 && gearTier === "heroic") {
 
