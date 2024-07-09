@@ -38,7 +38,7 @@ export default function GearEval(gearSet, piece, mainstat, substats){
             
             if(goodSubstatCount >= 3){
                 console.log(`Try to add ${archetype} to the list.`);
-                setMatchingArch([...artists],archetype);
+                setMatchingArch([...matchingArch],archetype);
             }
 
         }
