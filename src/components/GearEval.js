@@ -56,7 +56,6 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
                 });
             }
             if (piece === "necklace" || piece === "ring" || piece === "boots") {
-                let gearsetArchetypesList = gearSetList[gearSet];
 
                 console.log("Line 30: ", gearsetArchetypesList);
                 console.log({ gearSet }, { piece }, { mainstat }, { substats });
