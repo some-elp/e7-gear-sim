@@ -23,41 +23,44 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
     const [matchingArch, setMatchingArch] = useState([]);
     console.log("GearEval called with: set: ", { gearSet }, "piece: ", { piece }, "mainstat: ", { mainstat }, "substats: ", { substats });
 
-    function calculateMatchingArchetypes() {
-        let newMatching = [];
+    useEffect(() => {
 
-        if (piece === "sword" || piece === "helmet" || piece === "chestpiece") {
-            let gearsetArchetypesList = gearSetList[gearSet];
+        function calculateMatchingArchetypes() {
+            let newMatching = [];
 
-            let goodSubstatCount = 0;
-            console.log("Line 30: ", gearsetArchetypesList);
-            console.log({ gearSet }, { piece }, { mainstat }, { substats });
+            if (piece === "sword" || piece === "helmet" || piece === "chestpiece") {
+                let gearsetArchetypesList = gearSetList[gearSet];
 
-            gearsetArchetypesList.forEach(archetype => {
-                goodSubstatCount = 0;
+                let goodSubstatCount = 0;
+                console.log("Line 30: ", gearsetArchetypesList);
+                console.log({ gearSet }, { piece }, { mainstat }, { substats });
 
-                archetypes[archetype]["substats"].forEach(goodSubstat => {
-                    console.log("Checking Good Substat: ", goodSubstat);
-                    if (Object.values(substats).includes(goodSubstat)) {
-                        goodSubstatCount++;
-                        console.log(`This piece has ${goodSubstatCount} good substats for ${archetype}`);
+                gearsetArchetypesList.forEach(archetype => {
+                    goodSubstatCount = 0;
+
+                    archetypes[archetype]["substats"].forEach(goodSubstat => {
+                        console.log("Checking Good Substat: ", goodSubstat);
+                        if (Object.values(substats).includes(goodSubstat)) {
+                            goodSubstatCount++;
+                            console.log(`This piece has ${goodSubstatCount} good substats for ${archetype}`);
+                        }
+                    });
+
+                    if (goodSubstatCount >= 3) {
+                        console.log(`Try to add ${archetype} to the list.`);
+                        newMatching.push(archetype);
                     }
+
                 });
-
-                if (goodSubstatCount >= 3) {
-                    console.log(`Try to add ${archetype} to the list.`);
-                    newMatching.push(archetype);
-                }
-
-            });
+            }
+            if (piece === "necklace" || piece === "ring" || piece === "boots") {
+                //if (Object.values(archetype["mainstats"]).includes(mainstat))
+                //blah blah blah
+            }
+            setMatchingArch(prev => [...prev, ...newMatching]);
         }
-        if (piece === "necklace" || piece === "ring" || piece === "boots") {
-            //if (Object.values(archetype["mainstats"]).includes(mainstat))
-            //blah blah blah
-        }
-        setMatchingArch(prev => [...prev, ...newMatching]);
-    }
-    
+    }, [gearSet, piece, mainstat, substats]);
+
     calculateMatchingArchetypes();
 
     return (<p>This piece could be good on: {matchingArch.join(', ')}</p>)
