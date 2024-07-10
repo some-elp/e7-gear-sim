@@ -28,10 +28,12 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
         function calculateMatchingArchetypes() {
             let newMatching = [];
 
-            if (piece === "sword" || piece === "helmet" || piece === "chestpiece") {
-                let gearsetArchetypesList = gearSetList[gearSet];
+            let gearsetArchetypesList = gearSetList[gearSet];
 
-                let goodSubstatCount = 0;
+            let goodSubstatCount = 0;
+
+            if (piece === "sword" || piece === "helmet" || piece === "chestpiece") {
+
                 console.log("Line 30: ", gearsetArchetypesList);
                 console.log({ gearSet }, { piece }, { mainstat }, { substats });
 
@@ -54,8 +56,36 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
                 });
             }
             if (piece === "necklace" || piece === "ring" || piece === "boots") {
-                //if (Object.values(archetype["mainstats"]).includes(mainstat))
-                //blah blah blah
+                let gearsetArchetypesList = gearSetList[gearSet];
+
+                console.log("Line 30: ", gearsetArchetypesList);
+                console.log({ gearSet }, { piece }, { mainstat }, { substats });
+
+                gearsetArchetypesList.forEach(archetype => {
+                    goodSubstatCount = 0;
+                    console.log(Object.values(archetypes[archetype]["mainstats"]));
+
+                    //check if mainstat is there
+                    if (Object.values(archetype["mainstats"]).includes(mainstat)) {
+
+                        //check good substats
+                        archetypes[archetype]["substats"].forEach(goodSubstat => {
+                            console.log("Checking Good Substat: ", goodSubstat);
+                            if (Object.values(substats).includes(goodSubstat)) {
+                                goodSubstatCount++;
+                                console.log(`This piece has ${goodSubstatCount} good substats for ${archetype}`);
+                            }
+                        });
+                    }
+
+                    if (goodSubstatCount >= 2) {
+                        console.log(`Try to add ${archetype} to the list.`);
+                        newMatching.push(archetype);
+                    }
+
+                });
+
+
             }
             setMatchingArch(newMatching);
         }
