@@ -26,12 +26,21 @@ export default function GearEval({gearSet, piece, mainstat, substats}){
 
     if(piece === "sword" || piece === "helmet" || piece === "chestpiece"){
         let gearsetArchetypesList = gearSetList[gearSet];
+
+        if (!gearsetArchetypesList) {
+            console.error(`No archetypes found for gear set: ${gearSet}`);
+            return <p>Error: No archetypes found for this gear set</p>;
+        }
         let goodSubstatCount = 0;
         console.log("Line 30: ", gearsetArchetypesList);
         console.log({gearSet}, {piece}, {mainstat}, {substats});
 
         for(let archetype in gearsetArchetypesList){
             goodSubstatCount = 0;
+            if (!archetypes[archetype] || !archetypes[archetype]["substats"]) {
+                console.error(`No substats found for archetype: ${archetype}`);
+                continue;
+            }
             for(let goodSubstat in archetypes[archetype]["substats"]){
                 if(Object.values(substats).includes(goodSubstat)){
                     goodSubstatCount++;
@@ -49,5 +58,5 @@ export default function GearEval({gearSet, piece, mainstat, substats}){
     if(piece === "necklace" || piece === "ring" || piece === "boots"){
 
     }
-    return(<p>This piece could be good on: {matchingArch}</p>)
+    return(<p>This piece could be good on: {matchingArch.join(', ')}</p>)
 }
