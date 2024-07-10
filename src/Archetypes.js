@@ -32,8 +32,8 @@ const Archetypes = {
         "substats": ["attack%", "hp%", "defense%", "speed"]
     },
     "PvE DPS": {
-        "mainstats": ["critdamage, critchance, attack%, speed, effectiveness"],
-        "substats": ["critdamage, critchance, attack%, speed, effectiveness"]
+        "mainstats": ["critdamage", "critchance", "attack%", "speed", "effectiveness"],
+        "substats": ["critdamage", "critchance", "attack%", "speed", "effectiveness"]
     },
     "Tamarinne": {
         "mainstats": ["hp%", "defense%", "effectiveness", "effect resistance", "speed"],

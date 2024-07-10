@@ -18,7 +18,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="hp">Flat Health</option>
                         </select>
                         <input type="number" name="substat1" value={textInputs.substat1} onChange={handleTextInputChange} />
@@ -37,7 +37,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="hp">Flat Health</option>
                         </select>
                         <input type="number" name="substat2" value={textInputs.substat2} onChange={handleTextInputChange} />
@@ -56,7 +56,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="hp">Flat Health</option>
                         </select>
                         <input type="number" name="substat3" value={textInputs.substat3} onChange={handleTextInputChange} />
@@ -76,7 +76,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                                 <option value="critchance">Crit Chance</option>
                                 <option value="critdamage">Crit Damage</option>
                                 <option value="effectiveness">Effectiveness</option>
-                                <option value="effectresist">Effect Resistance</option>
+                                <option value="effectresistance">Effect Resistance</option>
                                 <option value="hp">Flat Health</option>
                             </select>
                             <input type="number" name="substat4" value={textInputs.substat4} onChange={handleTextInputChange} />
@@ -105,7 +105,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="hp">Flat Health</option>
                         </select>
                         <input type="number" name="substat1" value={textInputs.substat1} onChange={handleTextInputChange} />
@@ -124,7 +124,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="hp">Flat Health</option>
                         </select>
                         <input type="number" name="substat2" value={textInputs.substat2} onChange={handleTextInputChange} />
@@ -143,7 +143,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="hp">Flat Health</option>
                         </select>
                         <input type="number" name="substat3" value={textInputs.substat3} onChange={handleTextInputChange} />
@@ -163,7 +163,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                                 <option value="critchance">Crit Chance</option>
                                 <option value="critdamage">Crit Damage</option>
                                 <option value="effectiveness">Effectiveness</option>
-                                <option value="effectresist">Effect Resistance</option>
+                                <option value="effectresistance">Effect Resistance</option>
                                 <option value="hp">Flat Health</option>
                             </select>
                             <input type="number" name="substat4" value={textInputs.substat4} onChange={handleTextInputChange} />
@@ -193,7 +193,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="attack">Flat Attack</option>
                             <option value="defense">Flat Defense</option>
                             <option value="hp">Flat Health</option>
@@ -215,7 +215,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="attack">Flat Attack</option>
                             <option value="defense">Flat Defense</option>
                             <option value="hp">Flat Health</option>
@@ -237,7 +237,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                             <option value="critchance">Crit Chance</option>
                             <option value="critdamage">Crit Damage</option>
                             <option value="effectiveness">Effectiveness</option>
-                            <option value="effectresist">Effect Resistance</option>
+                            <option value="effectresistance">Effect Resistance</option>
                             <option value="attack">Flat Attack</option>
                             <option value="defense">Flat Defense</option>
                             <option value="hp">Flat Health</option>
@@ -260,7 +260,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                                 <option value="critchance">Crit Chance</option>
                                 <option value="critdamage">Crit Damage</option>
                                 <option value="effectiveness">Effectiveness</option>
-                                <option value="effectresist">Effect Resistance</option>
+                                <option value="effectresistance">Effect Resistance</option>
                                 <option value="attack">Flat Attack</option>
                                 <option value="defense">Flat Defense</option>
                                 <option value="hp">Flat Health</option>
