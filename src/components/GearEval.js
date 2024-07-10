@@ -28,6 +28,7 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
         function calculateMatchingArchetypes() {
             let newMatching = [];
 
+            //list of archetypes for the set
             let gearsetArchetypesList = gearSetList[gearSet];
 
             let goodSubstatCount = 0;
@@ -40,6 +41,7 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
                 gearsetArchetypesList.forEach(archetype => {
                     goodSubstatCount = 0;
 
+                    //check if the substats match for each archetype
                     archetypes[archetype]["substats"].forEach(goodSubstat => {
                         console.log("Checking Good Substat: ", goodSubstat);
                         if (Object.values(substats).includes(goodSubstat)) {
@@ -65,9 +67,9 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
                     console.log(Object.values(archetypes[archetype]["mainstats"]));
 
                     //check if mainstat is there
-                    if (Object.values(archetype["mainstats"]).includes(mainstat)) {
+                    if (Object.values(archetypes[archetype]["mainstats"]).includes(mainstat)) {
 
-                        //check good substats
+                        //check good substats for each archetype
                         archetypes[archetype]["substats"].forEach(goodSubstat => {
                             console.log("Checking Good Substat: ", goodSubstat);
                             if (Object.values(substats).includes(goodSubstat)) {
