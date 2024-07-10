@@ -38,12 +38,13 @@ export default function GearEval({gearSet, piece, mainstat, substats}){
                 console.error(`No substats found for archetype: ${archetype}`);
                 continue;
             }
-            for(let goodSubstat in archetypes[archetype]["substats"]){
+            archetypes[archetype]["substats"].forEach(goodSubstat => {
+                console.log("Checking Good Substat: ", goodSubstat);
                 if(Object.values(substats).includes(goodSubstat)){
                     goodSubstatCount++;
                     console.log(`This piece has ${goodSubstatCount} good substats for ${archetype}`);
                 }
-            }
+            });
             
             if(goodSubstatCount >= 3){
                 console.log(`Try to add ${archetype} to the list.`);
