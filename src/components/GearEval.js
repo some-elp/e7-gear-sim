@@ -57,7 +57,7 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
                 //if (Object.values(archetype["mainstats"]).includes(mainstat))
                 //blah blah blah
             }
-            setMatchingArch(prev => [...prev, ...newMatching]);
+            setMatchingArch(newMatching);
         }
     }, [gearSet, piece, mainstat, substats]);
 
