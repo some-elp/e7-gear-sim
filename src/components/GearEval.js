@@ -35,7 +35,8 @@ export default function GearEval({gearSet, piece, mainstat, substats}){
         console.log("Line 30: ", gearsetArchetypesList);
         console.log({gearSet}, {piece}, {mainstat}, {substats});
 
-        for(let archetype in gearsetArchetypesList){
+        for(let i = 0; i < gearsetArchetypesList.length; i++){
+            let archetype = gearsetArchetypesList[i];
             goodSubstatCount = 0;
             if (!archetypes[archetype] || !archetypes[archetype]["substats"]) {
                 console.error(`No substats found for archetype: ${archetype}`);
