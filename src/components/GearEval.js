@@ -1,6 +1,6 @@
 import GearSetList from "../GearSetList";
 import Archetypes from "../Archetypes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function GearEval({ gearSet, piece, mainstat, substats }) {
     /*
@@ -59,9 +59,10 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
             }
             setMatchingArch(newMatching);
         }
+        calculateMatchingArchetypes();
     }, [gearSet, piece, mainstat, substats]);
 
-    calculateMatchingArchetypes();
+
 
     return (<p>This piece could be good on: {matchingArch.join(', ')}</p>)
 }
