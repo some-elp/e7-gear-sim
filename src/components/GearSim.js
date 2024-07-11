@@ -52,7 +52,7 @@ function randomIncrease(values, weights) {
     }
 }
 
-export default function GearSim({ enhancement, substats, textInputs, gearLevel, gearTier, matchingArch }) {
+export default function GearSim({ enhancement, substats, textInputs, gearLevel, gearTier, matchingArch, piece }) {
 
     function simulate() {
         /*let results = matchingArch.reduce((acc, archetype) => {
@@ -87,7 +87,13 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     let arr1 = Object.keys(enhancement);
                     let arr2 = Object.values(enhancedSubstatNames);
 
-                    const leftovers = arr1.filter((element) => !arr2.includes(element));
+                    let leftovers = arr1.filter((element) => !arr2.includes(element));
+                    if(piece === "sword"){
+                        leftovers = leftovers.filter(!leftovers.includes("defense%") && !leftovers.includes("defense")); 
+                    }
+                    if(piece === "chestpiece"){
+                        leftovers = leftovers.filter(!leftovers.includes("attack%") && !leftovers.includes("attack")); 
+                    }
                     console.log("Supposedly leftovers array: ", leftovers);
                     console.log("all substats: ", arr1);
                     console.log("already in list: ", arr2);
@@ -128,9 +134,11 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     flatStatCount++;
                 }
                 else {
+                    /*
                     console.log(`Averages[value]: ${JSON.stringify(AVERAGES[value])}`);
                     console.log(`gearTier: ${gearTier}`);
                     console.log(`enhancedCount[key]: ${enhancedCount[key]}`);
+                    */
                     console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearLevel])}`);
                     if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearLevel] * enhancedCount[key])) {
                         isGood = false;

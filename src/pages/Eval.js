@@ -292,6 +292,7 @@ export default function Eval() {
                 gearLevel={iLevel}
                 gearTier={tier}
                 matchingArch={matchingArch}
+                piece={piece}
                 />
                 <button onClick={resetAll}>Reset All</button>
                 </div>
