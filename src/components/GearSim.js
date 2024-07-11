@@ -1,7 +1,7 @@
 
 
 const ENHANCE_COUNT = 5;
-const SIM_COUNT = 20;
+const SIM_COUNT = 1000;
 const AVERAGES = {
     "attack%": {
         "85": 6,
@@ -94,7 +94,7 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     if(piece === "chestpiece"){
                         leftovers = leftovers.filter((element) => !(element === "attack%") && !(element === "attack")); 
                     }
-                    
+
                     console.log("Supposedly leftovers array: ", leftovers);
                     console.log("all substats: ", arr1);
                     console.log("already in list: ", arr2);
@@ -135,12 +135,7 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     flatStatCount++;
                 }
                 else {
-                    /*
-                    console.log(`Averages[value]: ${JSON.stringify(AVERAGES[value])}`);
-                    console.log(`gearTier: ${gearTier}`);
-                    console.log(`enhancedCount[key]: ${enhancedCount[key]}`);
-                    */
-                    console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearLevel])}`);
+                    //console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearLevel])}`);
                     if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearLevel] * enhancedCount[key])) {
                         isGood = false;
                     }
