@@ -18,9 +18,6 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
     - 
     */
 
-    if (!gearSet || !piece || !mainstat || !substats) {
-        return null;
-    }
 
     const gearSetList = GearSetList;
     const archetypes = Archetypes;
@@ -28,6 +25,10 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
     console.log("GearEval called with: set: ", { gearSet }, "piece: ", { piece }, "mainstat: ", { mainstat }, "substats: ", { substats });
 
     useEffect(() => {
+
+        if (!gearSet || !piece || !mainstat || !substats) {
+            return null;
+        }
 
         function calculateMatchingArchetypes() {
             let newMatching = [];
