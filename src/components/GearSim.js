@@ -1,8 +1,7 @@
-import { useState } from "react";
 
 
 const ENHANCE_COUNT = 5;
-const SIM_COUNT = 1000;
+const SIM_COUNT = 10;
 const AVERAGES = {
     "attack%": {
         "85": 6,
@@ -117,8 +116,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     //handleEnhancement(inputHistory);
                     enhancedCount[randomSubstat]++;
                 }
-                console.log(enhancedSubstatNames);
-                console.log(enhancedSubstatValues);
+                console.log(`Final Substats: ${enhancedSubstatNames}`);
+                console.log(`Final values: ${enhancedSubstatValues}`);
             }
 
             //Check to see if our simulated gear has average or better rolls
@@ -133,6 +132,7 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     flatStatCount++;
                 }
                 else {
+                    console.log(`Averages value: ${AVERAGES[value][gearTier] * enhancedCount[key]}`)
                     if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearTier] * enhancedCount[key])) {
                         isGood = false;
                     }

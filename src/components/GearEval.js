@@ -18,6 +18,10 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
     - 
     */
 
+    if (!gearSet || !piece || !mainstat || !substats) {
+        return null;
+    }
+
     const gearSetList = GearSetList;
     const archetypes = Archetypes;
     const [matchingArch, setMatchingArch] = useState([]);
