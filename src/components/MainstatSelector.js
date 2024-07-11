@@ -22,7 +22,7 @@ export default function MainstatSelector({ piece, mainstat, selectMainstat }) {
                     onChange={selectMainstat}
                 >
                     <option value="">-Pick Something-</option>
-                    <option value="health">Health</option>
+                    <option value="hp">Health</option>
                 </select>
             </div>
         );
@@ -50,12 +50,12 @@ export default function MainstatSelector({ piece, mainstat, selectMainstat }) {
                     <option value="">-Pick Something-</option>
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
-                    <option value="health%">Health%</option>
+                    <option value="hp%">Health%</option>
                     <option value="critchance">Crit Chance</option>
                     <option value="critdamage">Crit Damage</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
-                    <option value="health">Health</option>
+                    <option value="hp">Health</option>
                 </select>
             </div>
         );
@@ -70,12 +70,12 @@ export default function MainstatSelector({ piece, mainstat, selectMainstat }) {
                     <option value="">-Pick Something-</option>
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
-                    <option value="health%">Health%</option>
+                    <option value="hp%">Health%</option>
                     <option value="effectiveness">Effectiveness</option>
                     <option value="effectresistance">Effect Resistance</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
-                    <option value="health">Health</option>
+                    <option value="hp">Health</option>
                 </select>
             </div>
         );
@@ -90,11 +90,11 @@ export default function MainstatSelector({ piece, mainstat, selectMainstat }) {
                     <option value="">-Pick Something-</option>
                     <option value="attack%">Attack%</option>
                     <option value="defense%">Defense%</option>
-                    <option value="health%">Health%</option>
+                    <option value="hp%">Health%</option>
                     <option value="speed">Speed</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
-                    <option value="health">Health</option>
+                    <option value="hp">Health</option>
                 </select>
             </div>
         );

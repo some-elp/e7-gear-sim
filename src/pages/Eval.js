@@ -3,6 +3,7 @@ import SubstatDropdown from "../components/SubstatDropdown";
 import { useState } from "react";
 import MainstatSelector from "../components/MainstatSelector";
 import GearEval from "../components/GearEval";
+import GearSim from "../components/GearSim";
 
 export default function Eval() {
     //states for the gear tier and json file.
@@ -24,6 +25,9 @@ export default function Eval() {
         substat3: ""
     });
 
+    //state for matching archetypes
+    const [matchingArch, setMatchingArch] = useState([])
+
     //state for submit button
     const [submitted, setSubmitted] = useState(false);
 
@@ -34,13 +38,13 @@ export default function Eval() {
     const [enhanceCount, setEnhanceCount] = useState(0);
 
     //state for gear piece
-    const[piece, setPiece] = useState("");
+    const [piece, setPiece] = useState("");
 
     //state for gear set
-    const[gearSet, setGearSet] = useState("");
+    const [gearSet, setGearSet] = useState("");
 
     //state for main stat
-    const[mainstat, setMainstat] = useState("");
+    const [mainstat, setMainstat] = useState("");
 
     //function to pass to mainstatselector
     const selectMainstat = (event) => {
@@ -52,6 +56,9 @@ export default function Eval() {
         setPiece(event.target.value);
         setMainstat('');
     }
+
+    //handler for simulation button
+    const [startSim, setStartSim] = useState(false);
 
     //handler for substat dropdown
     const handleSelect = (event) => {
@@ -149,6 +156,12 @@ export default function Eval() {
         setPiece("");
         setMainstat("");
         setSubmitted(false);
+        setMatchingArch([]);
+    }
+
+    //handler function for matching archetypes
+    function onMatchingArch(updated){
+        setMatchingArch(updated);
     }
 
 
@@ -227,7 +240,7 @@ export default function Eval() {
             <label>Mainstat: </label>
             {!submitted && (piece !== "") && (
                 <div>
-                    <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat}/>
+                    <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat} />
                 </div>
             )}
             <p>{mainstat}</p>
@@ -236,14 +249,14 @@ export default function Eval() {
 
             {/*if not submitted then show */}
             {!submitted && (piece !== "") && (
-                    <SubstatDropdown substats={substats}
-                        handleSelect={handleSelect}
-                        tier={tier}
-                        textInputs={textInputs}
-                        piece={piece}
-                        handleTextInputChange={handleTextInputChange}
-                        handleSubmit={handleSubmit}
-                        errors={errors} />
+                <SubstatDropdown substats={substats}
+                    handleSelect={handleSelect}
+                    tier={tier}
+                    textInputs={textInputs}
+                    piece={piece}
+                    handleTextInputChange={handleTextInputChange}
+                    handleSubmit={handleSubmit}
+                    errors={errors} />
             )}
             {/*show substats and their values*/}
             {submitted && (
@@ -263,8 +276,23 @@ export default function Eval() {
                             <p>{substats.substat4}: {textInputs.substat4}</p>
                         </>
                     )}
-                    <GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats}/>
-                    <button onClick={resetAll}>Reset All</button>
+                    <GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats} onMatchingArch={onMatchingArch} />
+                </div>
+            )}
+            {submitted && !startSim && (
+                <button onClick={setStartSim(true)}>Simulate Enhancements</button>
+            )}
+            {startSim && (
+                <div>
+                <GearSim 
+                enhancement={enhancement}
+                substats={substats}
+                textInputs={textInputs}
+                gearLevel={iLevel}
+                gearTier={tier}
+                matchingArch={matchingArch}
+                />
+                <button onClick={resetAll}>Reset All</button>
                 </div>
             )}
         </div>

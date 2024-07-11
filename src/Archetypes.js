@@ -36,8 +36,8 @@ const Archetypes = {
         "substats": ["critdamage", "critchance", "attack%", "speed", "effectiveness"]
     },
     "Tamarinne": {
-        "mainstats": ["hp%", "defense%", "effectiveness", "effect resistance", "speed"],
-        "substats:": ["hp%", "defense%", "effectiveness", "effect resistance", "speed"]
+        "mainstats": ["hp%", "defense%", "effectiveness", "effectresistance", "speed"],
+        "substats:": ["hp%", "defense%", "effectiveness", "effectresistance", "speed"]
     }
 };
 export default Archetypes;

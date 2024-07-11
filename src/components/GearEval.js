@@ -2,7 +2,7 @@ import GearSetList from "../GearSetList";
 import Archetypes from "../Archetypes";
 import { useState, useEffect } from "react";
 
-export default function GearEval({ gearSet, piece, mainstat, substats }) {
+export default function GearEval({ gearSet, piece, mainstat, substats, onMatchingArch }) {
     /*
     Depending on what set and piece has been selected, get a list of
     potential archetypes that use that set. Use a loop that go through the
@@ -89,6 +89,7 @@ export default function GearEval({ gearSet, piece, mainstat, substats }) {
 
             }
             setMatchingArch(newMatching);
+            onMatchingArch(newMatching);
         }
         calculateMatchingArchetypes();
     }, [gearSet, piece, mainstat, substats]);
