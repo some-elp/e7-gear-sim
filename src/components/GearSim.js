@@ -54,6 +54,10 @@ function randomIncrease(values, weights) {
 
 export default function GearSim({ enhancement, substats, textInputs, gearLevel, gearTier, matchingArch }) {
 
+    if (gearLevel === "" || gearTier === "" || !mainstat || !substats || !matchingArch) {
+        return null;
+    }
+
     function simulate() {
         /*let results = matchingArch.reduce((acc, archetype) => {
             acc[archetype] = 0;
@@ -95,9 +99,6 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     //set substatName to one of the substats not on the list
                     substatName = leftovers[Math.floor(Math.random() * leftovers.length)];
 
-                    //setup for changing substat list state
-                    //let substatHistory = { ...substats };
-
                     //same as regular enhancement
                     const { values, weights } = enhancement[substatName][gearLevel][gearTier];
                     let statValue = randomIncrease(values, weights);
@@ -105,25 +106,24 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     //update both substat list and textinputs
                     enhancedSubstatNames["substat4"] = substatName;
                     enhancedSubstatValues["substat4"] = statValue;
-                    //newSubstat(substatHistory);
-                    //handleEnhancement(inputHistory);
                 }
                 else {
                     const { values, weights } = enhancement[substatName][gearLevel][gearTier];
                     let increment = randomIncrease(values, weights);
 
                     enhancedSubstatValues[randomSubstat] = (parseInt(enhancedSubstatValues[randomSubstat])) + increment;
-                    //handleEnhancement(inputHistory);
                     enhancedCount[randomSubstat]++;
                 }
-                console.log(`Final Substats: ${enhancedSubstatNames}`);
-                console.log(`Final values: ${enhancedSubstatValues}`);
             }
 
             //Check to see if our simulated gear has average or better rolls
             let isGood = true;
             let flatStatCount = 0;
+            console.log("Final Substats: ", { enhancedSubstatNames });
+            console.log("Final Values: ", { enhancedSubstatValues });
             Object.entries(enhancedSubstatNames).forEach(([key, value]) => {
+                console.log(`Checking: key=${key}, value=${value}`);
+
                 //if we have flat stats, do not roll more than twice into them
                 if (value === "attack" || value === "defense" || value === "hp") {
                     if (enhancedCount[key] > 1) {
@@ -132,7 +132,10 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     flatStatCount++;
                 }
                 else {
-                    console.log(`Averages value: ${AVERAGES[value][gearTier] * enhancedCount[key]}`)
+                    console.log(`Averages[value]: ${AVERAGES[value]}`);
+                    console.log(`gearTier: ${gearTier}`);
+                    console.log(`enhancedCount[key]: ${enhancedCount[key]}`);
+                    console.log(`averageValue: ${AVERAGES[value][gearTier]}`);
                     if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearTier] * enhancedCount[key])) {
                         isGood = false;
                     }
@@ -150,7 +153,7 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
     const simResults = simulate();
     const percentage = (simResults / SIM_COUNT) * 100;
 
-    return(
+    return (
         <div>
             <p>This piece has a {percentage}% chance to maybe be good on one of the following: {matchingArch.join(', ')}</p>
         </div>
