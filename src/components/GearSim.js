@@ -1,7 +1,7 @@
 
 
 const ENHANCE_COUNT = 5;
-const SIM_COUNT = 10;
+const SIM_COUNT = 20;
 const AVERAGES = {
     "attack%": {
         "85": 6,
@@ -53,10 +53,6 @@ function randomIncrease(values, weights) {
 }
 
 export default function GearSim({ enhancement, substats, textInputs, gearLevel, gearTier, matchingArch }) {
-
-    if (gearLevel === "" || gearTier === "" || !substats || !matchingArch) {
-        return null;
-    }
 
     function simulate() {
         /*let results = matchingArch.reduce((acc, archetype) => {
@@ -132,10 +128,11 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     flatStatCount++;
                 }
                 else {
-                    console.log(`Averages[value]: ${JSON.stringify(AVERAGES[value])}`);                    console.log(`gearTier: ${gearTier}`);
+                    console.log(`Averages[value]: ${JSON.stringify(AVERAGES[value])}`);
+                    console.log(`gearTier: ${gearTier}`);
                     console.log(`enhancedCount[key]: ${enhancedCount[key]}`);
-                    console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearTier])}`);
-                    if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearTier] * enhancedCount[key])) {
+                    console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearLevel])}`);
+                    if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearLevel] * enhancedCount[key])) {
                         isGood = false;
                     }
                 }
