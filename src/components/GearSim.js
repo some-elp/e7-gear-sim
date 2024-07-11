@@ -132,10 +132,9 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     flatStatCount++;
                 }
                 else {
-                    console.log(`Averages[value]: ${AVERAGES[value]}`);
-                    console.log(`gearTier: ${gearTier}`);
+                    console.log(`Averages[value]: ${JSON.stringify(AVERAGES[value])}`);                    console.log(`gearTier: ${gearTier}`);
                     console.log(`enhancedCount[key]: ${enhancedCount[key]}`);
-                    console.log(`averageValue: ${AVERAGES[value][gearTier]}`);
+                    console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearTier])}`);
                     if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearTier] * enhancedCount[key])) {
                         isGood = false;
                     }

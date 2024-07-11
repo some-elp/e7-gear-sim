@@ -156,6 +156,7 @@ export default function Eval() {
         setPiece("");
         setMainstat("");
         setSubmitted(false);
+        setStartSim(false);
         setMatchingArch([]);
     }
 
