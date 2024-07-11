@@ -89,10 +89,10 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
 
                     let leftovers = arr1.filter((element) => !arr2.includes(element));
                     if(piece === "sword"){
-                        leftovers = leftovers.filter(!leftovers.includes("defense%") && !leftovers.includes("defense")); 
+                        leftovers = leftovers.filter((element) => !(element === "defense%") && !(element === "defense")); 
                     }
                     if(piece === "chestpiece"){
-                        leftovers = leftovers.filter(!leftovers.includes("attack%") && !leftovers.includes("attack")); 
+                        leftovers = leftovers.filter((element) => !(element === "attack%") && !(element === "attack")); 
                     }
                     console.log("Supposedly leftovers array: ", leftovers);
                     console.log("all substats: ", arr1);
