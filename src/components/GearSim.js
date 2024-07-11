@@ -54,7 +54,7 @@ function randomIncrease(values, weights) {
 
 export default function GearSim({ enhancement, substats, textInputs, gearLevel, gearTier, matchingArch }) {
 
-    if (gearLevel === "" || gearTier === "" || !mainstat || !substats || !matchingArch) {
+    if (gearLevel === "" || gearTier === "" || !substats || !matchingArch) {
         return null;
     }
 
