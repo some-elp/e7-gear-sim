@@ -1,5 +1,5 @@
 
-function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement, newSubstat, enhanceCount, piece }) {
+function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, handleEnhancement, newSubstat, enhanceCount }) {
     /*
     grab the substats and match them to the text inputs
     for each type of substat, decide what the roll range is
@@ -19,13 +19,7 @@ function GearRoller({ enhancement, substats, textInputs, gearLevel, gearTier, ha
             let arr1 = Object.keys(enhancement);
             let arr2 = Object.values(substats);
             
-            let leftovers = arr1.filter((element) => !arr2.includes(element));
-            if(piece === "sword"){
-                leftovers = leftovers.filter(!leftovers.includes("defense%") && !leftovers.includes("defense")); 
-            }
-            if(piece === "chestpiece"){
-                leftovers = leftovers.filter(!leftovers.includes("attack%") && !leftovers.includes("attack")); 
-            }
+            const leftovers = arr1.filter((element) => !arr2.includes(element));
             console.log("Supposedly leftovers array: ", leftovers);
             console.log("all substats: " , arr1);
             console.log("already in list: " , arr2);

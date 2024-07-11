@@ -212,7 +212,6 @@ export default function Gacha() {
                         handleEnhancement={(updated) => { handleEnhancement(updated); }}
                         newSubstat={(updated) => { newSubstat(updated); }}
                         enhanceCount={enhanceCount}
-                        piece={piece}
                     />
                     {enhanceCount >= 5 && <button onClick={resetAll}>Reset All</button>}
                     {enhanceCount >= 5 && <button onClick={revert}>Use Reroll Stone</button>}
