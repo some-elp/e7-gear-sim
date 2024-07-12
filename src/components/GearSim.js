@@ -129,7 +129,7 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
 
                 //if we have flat stats, do not roll more than twice into them
                 if (value === "attack" || value === "defense" || value === "hp") {
-                    if (enhancedCount[key] > 1) {
+                    if (enhancedCount[key] > 2) {
                         isGood = false;
                     }
                     flatStatCount++;
