@@ -99,5 +99,5 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
         calculateMatchingArchetypes();
     }, [gearSet, piece, mainstat, substats]);
 
-    return (<p>This piece could be good on: {matchingArch.join(', ')}</p>)
+    return (null);
 }
