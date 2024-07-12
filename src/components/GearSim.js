@@ -88,11 +88,11 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     let arr2 = Object.values(enhancedSubstatNames);
 
                     let leftovers = arr1.filter((element) => !arr2.includes(element));
-                    if(piece === "sword"){
-                        leftovers = leftovers.filter((element) => !(element === "defense%") && !(element === "defense")); 
+                    if (piece === "sword") {
+                        leftovers = leftovers.filter((element) => !(element === "defense%") && !(element === "defense"));
                     }
-                    if(piece === "chestpiece"){
-                        leftovers = leftovers.filter((element) => !(element === "attack%") && !(element === "attack")); 
+                    if (piece === "chestpiece") {
+                        leftovers = leftovers.filter((element) => !(element === "attack%") && !(element === "attack"));
                     }
 
                     console.log("Supposedly leftovers array: ", leftovers);
@@ -136,8 +136,10 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 }
                 else {
                     //console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearLevel])}`);
-                    if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearLevel] * enhancedCount[key])) {
-                        isGood = false;
+                    if (enhancedCount[key] > 1) {
+                        if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearLevel] * enhancedCount[key])) {
+                            isGood = false;
+                        }
                     }
                 }
             });
