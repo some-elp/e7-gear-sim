@@ -4,6 +4,7 @@ import { useState } from "react";
 import MainstatSelector from "../components/MainstatSelector";
 import GearEval from "../components/GearEval";
 import GearSim from "../components/GearSim";
+import "../css/gacha.module.css";
 
 export default function Eval() {
     //states for the gear tier and json file.

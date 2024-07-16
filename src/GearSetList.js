@@ -48,6 +48,7 @@ const GearSetList = {
         "Attack-Scaling Bruiser",
         "Defense-Scaling Bruiser",
         "Soulweaver/Tank",
+        "Debuffer"
     ],
     "unity": [
         "PvE DPS"
