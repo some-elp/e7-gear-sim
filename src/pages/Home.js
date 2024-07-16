@@ -1,5 +1,11 @@
 export default function Home() {
-    return (
+
+    //Using this or else all pages default to one body
+    useEffect(() => {
+        document.body.classList.add('index-body');
+       },[]);
+
+    return (  
         <div>
             <div className="Home">
                 <a href="https://some-elp.github.io/e7-gear-sim/gacha">Gear Roll Gacha</a>
