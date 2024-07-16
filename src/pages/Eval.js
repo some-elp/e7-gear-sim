@@ -1,6 +1,6 @@
 import Enhancement from "../enhancement";
 import SubstatDropdown from "../components/SubstatDropdown";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MainstatSelector from "../components/MainstatSelector";
 import GearEval from "../components/GearEval";
 import GearSim from "../components/GearSim";

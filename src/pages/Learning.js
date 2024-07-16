@@ -1,5 +1,5 @@
 import Square from "../components/Square";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../css/index.css";
 
 export default function Learning() {

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export default function Home() {
 
     //Using this or else all pages default to one body

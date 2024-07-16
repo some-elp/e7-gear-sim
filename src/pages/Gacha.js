@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SubstatDropdown from "../components/SubstatDropdown"
 import GearRoller from "../components/GearRoller";
 import Enhancement from "../enhancement";
