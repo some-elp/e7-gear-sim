@@ -1,13 +1,12 @@
 import Square from "../components/Square";
 import { useState, useEffect } from "react";
 import "../css/index.css";
+import useBodyClass from "../components/useBodyClass";
 
 export default function Learning() {
 
     //Using this or else all pages default to one body
-    useEffect(() => {
-      document.body.classList.add('index-body');
-     },[]);
+    useBodyClass('index-body');
 
   const [xIsNext, setXIsNext] = useState(true);
   const [history, setHistory] = useState([Array(9).fill(null)]);

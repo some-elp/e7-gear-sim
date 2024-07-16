@@ -1,11 +1,9 @@
-import { useEffect } from "react";
+import useBodyClass from "../components/useBodyClass";
 
 export default function Home() {
 
     //Using this or else all pages default to one body
-    useEffect(() => {
-        document.body.classList.add('index-body');
-       },[]);
+    useBodyClass('index-body');
 
     return (  
         <div>

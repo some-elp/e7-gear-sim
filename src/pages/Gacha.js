@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SubstatDropdown from "../components/SubstatDropdown"
 import GearRoller from "../components/GearRoller";
 import Enhancement from "../enhancement";
 import "../css/gacha.css";
+import useBodyClass from "../components/useBodyClass";
 
 export default function Gacha() {
 
     //Using this or else all pages default to one body
-    useEffect(() => {
-        document.body.classList.add('gacha-body');
-    }, []);
+    useBodyClass('gacha-body');
 
     //states for the gear tier and json file.
     const enhancement = Enhancement;

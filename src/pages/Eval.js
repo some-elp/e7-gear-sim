@@ -1,17 +1,16 @@
 import Enhancement from "../enhancement";
 import SubstatDropdown from "../components/SubstatDropdown";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MainstatSelector from "../components/MainstatSelector";
 import GearEval from "../components/GearEval";
 import GearSim from "../components/GearSim";
+import useBodyClass from "../components/useBodyClass";
 import "../css/gacha.css";
 
 export default function Eval() {
 
     //Using this or else all pages default to one body
-    useEffect(() => {
-        document.body.classList.add('gacha-body');
-       },[]);
+    useBodyClass('gacha-body');
 
     //states for the gear tier and json file.
     const enhancement = Enhancement;
