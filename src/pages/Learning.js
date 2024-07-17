@@ -1,5 +1,5 @@
 import Square from "../components/Square";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../css/index.css";
 import useBodyClass from "../components/useBodyClass";
 
