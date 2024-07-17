@@ -1,4 +1,5 @@
 import useBodyClass from "../components/useBodyClass";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -6,12 +7,14 @@ export default function Home() {
     useBodyClass('index-body');
 
     return (  
-        <div>
-            <div className="Home">
-                <a href="https://some-elp.github.io/e7-gear-sim/gacha">Gear Roll Gacha</a>
-            </div>
-            <div className="Eval">
-                <a href="https://some-elp.github.io/e7-gear-sim/eval">Evaluate Gear</a>
+        <div className="home-container">
+            <div className="buttons-container">
+                <Link to="/gacha"><button>
+                    Gear Roll Gacha
+                </button></Link>
+                <Link to="/eval"><button>
+                    Evaluate Gear
+                </button></Link>
             </div>
         </div>
     );
