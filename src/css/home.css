@@ -14,13 +14,13 @@
     box-sizing: border-box;
 }
 
-.buttons-container {
+.home-container .buttons-container {
     display: flex;
     justify-content: center;
     margin: 20px 0;
 }
   
-.button {
+.home-container .button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,6 +37,6 @@
     transition: transform 0.3s ease;
 }
   
-.button:hover {
+.home-container .button:hover {
     transform: scale(1.05);
 }
