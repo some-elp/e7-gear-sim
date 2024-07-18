@@ -10,10 +10,10 @@ export default function Home() {
     return (  
         <div className="home-container">
             <div className="buttons-container">
-                <Link to="/gacha"><button>
+                <Link to="/gacha" style={{textDecoration: 'none'}}><button>
                     Gear Roll Gacha
                 </button></Link>
-                <Link to="/eval"><button>
+                <Link to="/eval" style={{textDecoration: 'none'}}><button>
                     Evaluate Gear
                 </button></Link>
             </div>
