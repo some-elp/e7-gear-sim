@@ -28,7 +28,7 @@
     max-height: 100%;
     object-fit: contain;
     z-index: -1;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1));
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1), url("./images/artena_idle.png"));
 }
 
 .home-container .buttons-container {
