@@ -47,13 +47,14 @@
     border-radius: 4px;
     color: white;
     font-size: 1.2em;
-    background-image: linear-gradient(rgb(58, 108, 36) 80%, rgb(81, 195, 94));
+    background-image: linear-gradient(rgb(58, 108, 36) 90%, rgb(81, 195, 94));
     background-position: center;
     transition: transform 0.3s ease;
     z-index: 1;
 }
   
 .home-container button:hover {
+    background-image: none;
     background-color:rgb(28, 54, 16);
     transform: scale(1.05);
 }

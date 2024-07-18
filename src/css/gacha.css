@@ -33,7 +33,7 @@
   
   .gacha-container button {
     padding: 10px 15px;
-    background-image: linear-gradient(rgb(48, 94, 29) 80%, rgb(81, 195, 94));
+    background-image: linear-gradient(rgb(58, 108, 36) 90%, rgb(81, 195, 94));
     color: white;
     border: none;
     border-radius: 4px;
@@ -44,6 +44,11 @@
   .gacha-container button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+
+  .gacha-container button:hover {
+    background-image: none;
+    background-color:rgb(28, 54, 16);
   }
   
   .gacha-container button + button {
