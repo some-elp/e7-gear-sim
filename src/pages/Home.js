@@ -8,8 +8,7 @@ export default function Home() {
 
     return (  
         <div className="home-container">
-            {/*<img src="./images/artena_idle.png" alt="" className="artena"/>*/}
-            <div className="artena"/>
+            <img src="./images/artena_idle.png" alt="" className="artena"/>
             <div className="buttons-container">
                 <Link to="/gacha" style={{textDecoration: 'none'}}><button>
                     Gear Roll Gacha
