@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/home.css"
 
 export default function Home() {
+    
     //Using this or else all pages default to one body
     useBodyClass('home-body');
 
