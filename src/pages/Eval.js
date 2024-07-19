@@ -5,12 +5,12 @@ import MainstatSelector from "../components/MainstatSelector";
 import GearEval from "../components/GearEval";
 import GearSim from "../components/GearSim";
 import useBodyClass from "../components/useBodyClass";
-import "../css/gacha.css";
+import "../css/eval.css";
 
 export default function Eval() {
 
     //Using this or else all pages default to one body
-    useBodyClass('gacha-body');
+    useBodyClass('eval-body');
 
     //states for the gear tier and json file.
     const enhancement = Enhancement;
@@ -167,13 +167,13 @@ export default function Eval() {
     }
 
     //handler function for matching archetypes
-    function onMatchingArch(updated){
+    function onMatchingArch(updated) {
         setMatchingArch(updated);
     }
 
 
     return (
-        <div className="gacha-container">
+        <div className="eval-container">
             <label>Equipment Level: </label>
             {!submitted && (
                 <select
@@ -291,16 +291,16 @@ export default function Eval() {
             )}
             {startSim && (
                 <div>
-                <GearSim 
-                enhancement={enhancement}
-                substats={substats}
-                textInputs={textInputs}
-                gearLevel={iLevel}
-                gearTier={tier}
-                matchingArch={matchingArch}
-                piece={piece}
-                />
-                <button onClick={resetAll}>Reset All</button>
+                    <GearSim
+                        enhancement={enhancement}
+                        substats={substats}
+                        textInputs={textInputs}
+                        gearLevel={iLevel}
+                        gearTier={tier}
+                        matchingArch={matchingArch}
+                        piece={piece}
+                    />
+                    <button onClick={resetAll}>Reset All</button>
                 </div>
             )}
         </div>

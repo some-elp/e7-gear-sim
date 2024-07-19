@@ -1,6 +1,6 @@
 import GearSetList from "../GearSetList";
 import Archetypes from "../Archetypes";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function GearEval({ gearSet, piece, mainstat, substats, onMatchingArch }) {
     /*
@@ -21,7 +21,6 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
 
     const gearSetList = GearSetList;
     const archetypes = Archetypes;
-    const [matchingArch, setMatchingArch] = useState([]);
     console.log("GearEval called with: set: ", { gearSet }, "piece: ", { piece }, "mainstat: ", { mainstat }, "substats: ", { substats });
 
     useEffect(() => {
@@ -93,7 +92,6 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
 
 
             }
-            setMatchingArch(newMatching);
             onMatchingArch(newMatching);
         }
         calculateMatchingArchetypes();
