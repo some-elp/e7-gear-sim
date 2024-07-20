@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/e7-gear-sim/static/css/main.cac53a13.css",
-    "main.js": "/e7-gear-sim/static/js/main.f757fcf9.js",
+    "main.js": "/e7-gear-sim/static/js/main.54d20fa6.js",
     "static/js/453.55f5e237.chunk.js": "/e7-gear-sim/static/js/453.55f5e237.chunk.js",
     "static/media/test2.webp": "/e7-gear-sim/static/media/test2.7776264f49f0cc534123.webp",
     "index.html": "/e7-gear-sim/index.html",
     "main.cac53a13.css.map": "/e7-gear-sim/static/css/main.cac53a13.css.map",
-    "main.f757fcf9.js.map": "/e7-gear-sim/static/js/main.f757fcf9.js.map",
+    "main.54d20fa6.js.map": "/e7-gear-sim/static/js/main.54d20fa6.js.map",
     "453.55f5e237.chunk.js.map": "/e7-gear-sim/static/js/453.55f5e237.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cac53a13.css",
-    "static/js/main.f757fcf9.js"
+    "static/js/main.54d20fa6.js"
   ]
 }
