@@ -212,7 +212,7 @@ export default function Eval() {
             {submitted && <p>{gearSet}</p>}
 
             {gearSet !== "" && <label>Piece: </label>}
-            {!submitted && (gearSet !== "") (
+            {!submitted && (gearSet !== "") && (
                 <PieceSelector piece={piece} selectPiece={selectPiece}/>
             )}
             {submitted && <p>{piece}</p>}
