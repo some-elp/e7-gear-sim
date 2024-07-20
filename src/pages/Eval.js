@@ -205,19 +205,19 @@ export default function Eval() {
             )}
             {submitted && <p>{tier}</p>}
 
-            <label>Set: </label>
+            <label className="set-label">Set: </label>
             {!submitted && (
                 <SetSelector gearSet={gearSet} selectSet={selectSet}/>
             )}
             {submitted && <p>{gearSet}</p>}
 
-            <label>Piece: </label>
-            {!submitted && (
+            {gearSet !== "" && <label>Piece: </label>}
+            {!submitted && (gearSet !== "") (
                 <PieceSelector piece={piece} selectPiece={selectPiece}/>
             )}
             {submitted && <p>{piece}</p>}
 
-            <label>Mainstat: </label>
+            {piece !== "" && <label>Mainstat: </label>}
             {!submitted && (piece !== "") && (
                 <div>
                     <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat} />
@@ -225,7 +225,7 @@ export default function Eval() {
             )}
             {submitted && <p>{mainstat}</p>}
 
-            <label>Substats:</label>
+            {piece !== "" && <label>Substats:</label>}
 
             {/*if not submitted then show */}
             {!submitted && (piece !== "") && (
