@@ -1,66 +1,67 @@
-  .gacha-body {
-    font-family: Arial, sans-serif;
-    background-color: #7f8e94;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .gacha-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #adbbd7;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .gacha-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .gacha-container label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .gacha-container select, input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .gacha-container button {
-    padding: 10px 15px;
-    background-image: linear-gradient(rgb(58, 108, 36) 80%, rgb(81, 195, 94));
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .gacha-container button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
+.gacha-body {
+  font-family: Arial, sans-serif;
+  background-color: #7f8e94;
+  margin: 0;
+  padding: 20px;
+}
 
-  .gacha-container button:hover {
-    background-image: none;
-    background-color:rgb(28, 54, 16);
-  }
-  
-  .gacha-container button + button {
-    background-color: #28a745;
-    margin-left: 10px;
-  }
+.gacha-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #adbbd7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  .gacha-container .next-to {
-    display:flex;
-    flex-direction: row;
-  }
-  
-  .gacha-container .next-to input {
-    margin-left: 10px;
-  }
+.gacha-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gacha-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.gacha-container select,
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.gacha-container button {
+  padding: 10px 15px;
+  background-image: linear-gradient(rgb(58, 108, 36) 80%, rgb(81, 195, 94));
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.gacha-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.gacha-container button:hover {
+  background-image: none;
+  background-color: rgb(28, 54, 16);
+}
+
+.gacha-container button+button {
+  background-color: #28a745;
+  margin-left: 10px;
+}
+
+.gacha-container .next-to {
+  display: flex;
+  flex-direction: row;
+}
+
+.gacha-container .next-to input {
+  margin-left: 10px;
+}

@@ -6,6 +6,7 @@ import GearEval from "../components/GearEval";
 import GearSim from "../components/GearSim";
 import useBodyClass from "../components/useBodyClass";
 import "../css/eval.css";
+import SetSelector from "../components/SetSelector";
 
 export default function Eval() {
 
@@ -52,6 +53,9 @@ export default function Eval() {
     //state for main stat
     const [mainstat, setMainstat] = useState("");
 
+    //handler for simulation button
+    const [startSim, setStartSim] = useState(false);
+
     //function to pass to mainstatselector
     const selectMainstat = (event) => {
         setMainstat(event.target.value);
@@ -63,8 +67,10 @@ export default function Eval() {
         setMainstat('');
     }
 
-    //handler for simulation button
-    const [startSim, setStartSim] = useState(false);
+    //handler for gear set selection
+    function selectSet(set){
+        setGearSet(set);
+    }
 
     //handler for substat dropdown
     const handleSelect = (event) => {
@@ -200,30 +206,7 @@ export default function Eval() {
 
             <label>Set: </label>
             {!submitted && (
-                <select
-                    value={gearSet}
-                    onChange={(e) => setGearSet(e.target.value)}
-                >
-                    <option value="">-Pick Something-</option>
-                    <option value="attack">Attack</option>
-                    <option value="defense">Defense</option>
-                    <option value="health">Health</option>
-                    <option value="speed">Speed</option>
-                    <option value="critical">Critical</option>
-                    <option value="hit">Hit</option>
-                    <option value="destruction">Destruction</option>
-                    <option value="resist">Resist</option>
-                    <option value="lifesteal">Lifesteal</option>
-                    <option value="counter">Counter</option>
-                    <option value="unity">Unity</option>
-                    <option value="immunity">Immunity</option>
-                    <option value="rage">Rage</option>
-                    <option value="penetration">Penetration</option>
-                    <option value="revenge">Revenge</option>
-                    <option value="injury">Injury</option>
-                    <option value="protection">Protection</option>
-                    <option value="torrent">Torrent</option>
-                </select>
+                <SetSelector gearSet={gearSet} selectSet={selectSet}/>
             )}
             <p>{gearSet}</p>
 
@@ -287,7 +270,7 @@ export default function Eval() {
                 </div>
             )}
             {submitted && !startSim && (
-                <button onClick={setStartSim(true)}>Simulate Enhancements</button>
+                <button classname="proceed-button"onClick={setStartSim(true)}>Simulate Enhancements</button>
             )}
             {startSim && (
                 <div>
