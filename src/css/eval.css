@@ -61,14 +61,14 @@ input {
     margin-left: 10px;
 }
 
-.gear-set-container {
+.gear-element-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0;
 }
 
-.gear-set-container .gear-set-button {
+.gear-element-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,17 +86,16 @@ input {
     text-align: center;
 }
 
-.gear-set-container .gear-set-button img {
-    max-width: 40px; 
-    max-height: 40px;
-    margin-right: 8px;
-}
-
-.gear-set-container .gear-set-button:hover {
+.gear-element-button:hover {
     transform: scale(1.05);
 }
 
-.gear-set-container .gear-set-button.selected {
+.gear-element-button.selected {
     background-color: #8b3838;
     transform: scale(1.05);
+}
+
+.gear-element-icon {
+    max-width: 45px;
+    max-height: 45px;
 }

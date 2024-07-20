@@ -9,13 +9,13 @@ export default function SetSelector({gearSet, selectSet}){
     );
 
     return(
-        <div className="gear-set-container">
+        <div className="gear-element-container">
             {sets.map(item => 
                 <button
-                    className={gearSet === item ? 'gear-set-button selected' : 'gear-set-button'}
+                    className={gearSet === item ? 'gear-element-button selected' : 'gear-element-button'}
                     onClick={() => selectSet(item)}
                 >
-                    <img src={`./images/${item}.png`} alt={`${item}`}/>
+                    <img className="gear-element-icon" src={`./images/${item}.png`} alt={`${item}`}/>
                 </button>
             )}
         </div>

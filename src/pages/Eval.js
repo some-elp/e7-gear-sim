@@ -7,6 +7,7 @@ import GearSim from "../components/GearSim";
 import useBodyClass from "../components/useBodyClass";
 import "../css/eval.css";
 import SetSelector from "../components/SetSelector";
+import PieceSelector from "../components/PieceSelector";
 
 export default function Eval() {
 
@@ -62,8 +63,8 @@ export default function Eval() {
     }
 
     //handler for piece selection
-    const selectPiece = (event) => {
-        setPiece(event.target.value);
+    function selectPiece(updated){
+        setPiece(updated);
         setMainstat('');
     }
 
@@ -190,7 +191,7 @@ export default function Eval() {
                     <option value="88">88</option>
                 </select>
             )}
-            <p>{iLevel}</p>
+            {submitted && <p>{iLevel}</p>}
 
             <label>Equipment Tier: </label>
             {!submitted && (
@@ -202,30 +203,19 @@ export default function Eval() {
                     <option value="heroic">Heroic/Purple</option>
                 </select>
             )}
-            <p>{tier}</p>
+            {submitted && <p>{tier}</p>}
 
             <label>Set: </label>
             {!submitted && (
                 <SetSelector gearSet={gearSet} selectSet={selectSet}/>
             )}
-            <p>{gearSet}</p>
+            {submitted && <p>{gearSet}</p>}
 
             <label>Piece: </label>
             {!submitted && (
-                <select
-                    value={piece}
-                    onChange={selectPiece}
-                >
-                    <option value="">-Pick Something-</option>
-                    <option value="sword">Sword</option>
-                    <option value="helmet">Helmet</option>
-                    <option value="chestpiece">Chestpiece</option>
-                    <option value="necklace">Necklace</option>
-                    <option value="ring">Ring</option>
-                    <option value="boots">Boots</option>
-                </select>
+                <PieceSelector piece={piece} selectPiece={selectPiece}/>
             )}
-            <p>{piece}</p>
+            {submitted && <p>{piece}</p>}
 
             <label>Mainstat: </label>
             {!submitted && (piece !== "") && (
@@ -233,7 +223,7 @@ export default function Eval() {
                     <MainstatSelector piece={piece} mainstat={mainstat} selectMainstat={selectMainstat} />
                 </div>
             )}
-            <p>{mainstat}</p>
+            {submitted && <p>{mainstat}</p>}
 
             <label>Substats:</label>
 
@@ -270,7 +260,7 @@ export default function Eval() {
                 </div>
             )}
             {submitted && !startSim && (
-                <button classname="proceed-button"onClick={setStartSim(true)}>Simulate Enhancements</button>
+                <button classname="proceed-button" onClick={setStartSim(true)}>Simulate Enhancements</button>
             )}
             {startSim && (
                 <div>
@@ -283,7 +273,7 @@ export default function Eval() {
                         matchingArch={matchingArch}
                         piece={piece}
                     />
-                    <button onClick={resetAll}>Reset All</button>
+                    <button classname="proceed-button" onClick={resetAll}>Reset All</button>
                 </div>
             )}
         </div>

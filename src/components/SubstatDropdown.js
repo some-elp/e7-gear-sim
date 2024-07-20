@@ -270,7 +270,7 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     )}
                     {tier === "epic" && errors["substat4"] && <p style={{ color: 'red' }}>{errors["substat4"]}</p>}
                 </form>
-                <button onClick={handleSubmit}>Submit</button>
+                <button className="proceed-button" onClick={handleSubmit}>Submit</button>
             </div>
         );
     }
