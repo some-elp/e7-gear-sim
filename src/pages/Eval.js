@@ -273,7 +273,7 @@ export default function Eval() {
                         matchingArch={matchingArch}
                         piece={piece}
                     />
-                    <button classname="proceed-button" onClick={resetAll}>Reset All</button>
+                    <button className="proceed-button" onClick={resetAll}>Reset All</button>
                 </div>
             )}
         </div>

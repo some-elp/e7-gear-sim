@@ -152,6 +152,12 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
         }
         return results;
     }
+
+    if(matchingArch.length < 1){
+        return(
+            <p>This piece probably can't be used on anything unless you quad/pentaroll one of the stats.</p>
+        );
+    }
     const simResults = simulate();
     const percentage = (simResults / SIM_COUNT) * 100;
 
