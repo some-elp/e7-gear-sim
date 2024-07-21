@@ -1,4 +1,4 @@
-# Gear Enhancement Simulater for Epic Seven
+# Gear Enhancement Simulator for Epic Seven
 The purpose of this web application is to help users understand the difference between a gear worth rolling and a gear that should be tossed away. All enhancement data is from the official Smilegate post detailing enhancement odds.
 The link to the webpage is here: https://some-elp.github.io/e7-gear-sim/
 ## Gear Roll Gacha
