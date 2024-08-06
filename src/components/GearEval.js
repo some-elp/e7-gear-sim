@@ -58,6 +58,10 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
                         console.log(`Try to add ${archetype} to the list.`);
                         newMatching.push(archetype);
                     }
+                    else if(goodSubstatCount >= 2 && piece === "sword" && archetype === "Soulweaver/Tank"){
+                        console.log(`Try to add ${archetype} to the list.`);
+                        newMatching.push(archetype);
+                    }
 
                 });
             }
