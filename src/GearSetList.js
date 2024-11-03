@@ -74,7 +74,7 @@ const GearSetList = {
         "PvE DPS"
     ],
     "revenge": [
-        "Soulwever/Tank"
+        "Soulweaver/Tank"
     ],
     "injury": [
         "HP-Scaling Bruiser",
