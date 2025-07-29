@@ -4,4 +4,4 @@ The link to the webpage is here: https://some-elp.github.io/e7-gear-sim/
 ## Gear Roll Gacha
 Users can input the gear's tier and level, along with substats, after which you can hit enhance and see what rolls you get on your gear.
 ## Evaluate Gear
-By inputting piece, set, mainstat, and substats, the page will give the user a percentage chance of the gear being usable. "Usability" is currently defined as a gear that meets the requirements for a unit archetype and ends with all substats average or better. This is a flawed definition that will be changed later.
+By inputting piece, set, mainstat, and substats, the page will give the user a percentage chance of the gear being usable. "Usability" is currently defined as a gear that meets the requirements for a unit archetype and ends with at least three out of four substats being average rolls or better. This definition may be changed in the future.
