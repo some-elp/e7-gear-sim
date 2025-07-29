@@ -1,7 +1,7 @@
 
 
 const ENHANCE_COUNT = 5;
-const SIM_COUNT = 1000;
+const SIM_COUNT = 5000;
 const AVERAGES = {
     "attack%": {
         "85": 6,
