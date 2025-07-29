@@ -122,6 +122,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
             //Check to see if our simulated gear has average or better rolls
             let isGood = true;
             let flatStatCount = 0;
+            //Number of stats that are below average.
+            let numBelowAverage = 0;
             console.log("Final Substats: ", { enhancedSubstatNames });
             console.log("Final Values: ", { enhancedSubstatValues });
             Object.entries(enhancedSubstatNames).forEach(([key, value]) => {
@@ -138,12 +140,15 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     //console.log(`averageValue: ${JSON.stringify(AVERAGES[value][gearLevel])}`);
                     if (enhancedCount[key] > 1) {
                         if (parseInt(enhancedSubstatValues[key]) < (AVERAGES[value][gearLevel] * enhancedCount[key])) {
-                            isGood = false;
+                            numBelowAverage++;
                         }
                     }
                 }
             });
             if (flatStatCount > 1) {
+                isGood = false;
+            }
+            if(numBelowAverage > 1){
                 isGood = false;
             }
             if (isGood) {
