@@ -1,80 +1,131 @@
 const GearSetList = {
-    "attack": ["PvE DPS", "Burn/Pure Attack-Scaling DPS", "Attack-Scaling Bruiser", "DPS"],
-    "defense": ["Soulweaver/Tank", "Defense-Scaling Bruiser",],
-    "health": ["Soulweaver/Tank", "HP-Scaling Bruiser", "Attack-Scaling Bruiser"],
-    "speed": [
-        "Soulweaver/Tank",
+    "attack": [
+        "PvE DPS",
+        "Burn DPS",
+        "Attack-Scaling NonCrit",
+        "Attack-Scaling Bruiser",
+        "DPS",
+        "Attack-Scaling AutoCrit",
+        "ML Ken"
+    ],
+    "defense": [
+        "Soulweaver",
+        "Knight",
+        "Defense-Scaling Bruiser",
+        "Defense-Scaling NonCrit",
+        "Attack-Scaling Bruiser",
+        "HP-Scaling Bruiser",
+        "ML Ken"
+    ],
+    "health": [
+        "Soulweaver",
+        "Knight",
         "HP-Scaling Bruiser",
         "Attack-Scaling Bruiser",
         "Defense-Scaling Bruiser",
-        "Debuffer",
+        "HP-Scaling NonCrit",
+        "ML Aria",
+        "ML Ken"
+    ],
+    "speed": [
         "DPS",
-        "PvE DPS",
-        "Burn/Pure Attack-Scaling DPS"
+        "Soulweaver",
+        "Knight",
+        "Debuffer",
+        "HP-Scaling Bruiser",
+        "Attack-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "Attack-Scaling NonCrit",
+        "Defense-Scaling NonCrit",
+        "HP-Scaling NonCrit",
+        "Attack-Scaling AutoCrit",
+        "Burn DPS",
+        "Tamarinne",
+        "ML Aria",
+        "PvE DPS"
     ],
     "critical": [
-        "HP-Scaling Bruiser",
         "Attack-Scaling Bruiser",
+        "HP-Scaling Bruiser",
         "Defense-Scaling Bruiser",
-        "Lifesteal DPS",
-        "DPS",
         "PvE DPS"
     ],
     "hit": [
         "Debuffer",
         "PvE DPS",
-        "Tamarinne"
+        "Tamarinne",
+        "Burn DPS"
     ],
     "destruction": [
-        "HP-Scaling Bruiser",
-        "Attack-Scaling Bruiser",
-        "Defense-Scaling Bruiser",
         "DPS",
-        "PvE DPS"
+        "Attack-Scaling Bruiser",
+        "HP-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "Attack-Scaling AutoCrit",
+        "PvE DPS",
+        "ML Aria",
+        "ML Ken"
     ],
     "resist": [
-        "Soulweaver/Tank",
+        "Soulweaver",
+        "Knight",
+        "ML Aria",
+        "ML Ken",
+        "Amiki",
         "Tamarinne"
     ],
     "lifesteal": [
-        "HP-Scaling Bruiser",
+        "DPS",
         "Attack-Scaling Bruiser",
+        "HP-Scaling Bruiser",
         "Defense-Scaling Bruiser",
-        "Lifesteal DPS",
-        "PvE DPS"
+        "Attack-Scaling AutoCrit",
+        "PvE DPS",
+        "ML Ken"
     ],
     "counter": [
-        "HP-Scaling Bruiser",
+        "DPS",
         "Attack-Scaling Bruiser",
-        "Defense-Scaling Bruiser",
-        "Soulweaver/Tank",
-        "Debuffer"
+        "HP-Scaling Bruiser",
+        "Defense-Scaling NonCrit",
+        "Attack-Scaling AutoCrit",
+        "Burn DPS",
+        "Amiki"
     ],
     "unity": [
         "PvE DPS"
     ],
     "immunity": [
-        "Soulweaver/Tank",
-        "HP-Scaling Bruiser",
-        "Attack-Scaling Bruiser",
-        "Defense-Scaling Bruiser",
-        "Debuffer",
         "DPS",
-        "PvE DPS",
-        "Burn/Pure Attack-Scaling DPS"
+        "Soulweaver",
+        "Knight",
+        "Debuffer",
+        "Attack-Scaling Bruiser",
+        "HP-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "Attack-Scaling NonCrit",
+        "Defense-Scaling NonCrit",
+        "HP-Scaling NonCrit",
+        "Attack-Scaling AutoCrit",
+        "Burn DPS",
+        "ML Ken",
+        "Amiki"
     ],
     "rage": [
         "PvE DPS"
     ],
     "penetration": [
-        "HP-Scaling Bruiser",
-        "Attack-Scaling Bruiser",
-        "Defense-Scaling Bruiser",
         "DPS",
-        "PvE DPS"
+        "Attack-Scaling Bruiser",
+        "HP-Scaling Bruiser",
+        "Defense-Scaling Bruiser",
+        "Attack-Scaling AutoCrit",
+        "PvE DPS",
+        "ML Aria",
+        "ML Ken"
     ],
     "revenge": [
-        "Soulweaver/Tank"
+        "Knight"
     ],
     "injury": [
         "HP-Scaling Bruiser",
@@ -82,11 +133,13 @@ const GearSetList = {
         "Defense-Scaling Bruiser"
     ],
     "protection": [
-        "Soulweaver/Tank"
+        "Soulweaver",
+        "Knight"
     ],
     "torrent": [
         "DPS",
-        "Burn/Pure Attack-Scaling DPS"
+        "Attack-Scaling NonCrit",
+        "Attack-Scaling AutoCrit"
     ]
 };
 export default GearSetList;

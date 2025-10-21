@@ -17,6 +17,18 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
     archetype. If yes, add that archetype to another list.
     - 
     */
+   
+    /*
+    New plan: After set and piece have been selected, allow the user to select
+    5 different archetypes that they would like to measure the gear by.
+    For each of the 5 archetypes, check to see how many of the simulated rolls (x/10000)
+    end up as decent gears for that archetype
+    On the evaluation page, show a 5 point radar chart that has the 5 archetypes and the
+    number of rolls (x/10000) that ended up being usable for each archetype. 
+    How do we solve the problem of the user not knowing what archetypes to select?
+    Do we pre-select 5 archetypes based on the set selected? seems like a bit of work.
+    That is most likely a problem for another time.
+    */
 
 
     const gearSetList = GearSetList;
@@ -35,6 +47,7 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
             //list of archetypes for the set
             let gearsetArchetypesList = gearSetList[gearSet];
 
+            //how many substats on the gear match the set and archetype
             let goodSubstatCount = 0;
 
             if (piece === "sword" || piece === "helmet" || piece === "chestpiece") {
@@ -54,14 +67,17 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
                         }
                     });
 
+                    //left side gear is good if 3 substats match an archetype
                     if (goodSubstatCount >= 3) {
                         console.log(`Try to add ${archetype} to the list.`);
                         newMatching.push(archetype);
                     }
+                    //sword cannot roll defense so it's ok if there are only 2 substats
                     else if(goodSubstatCount >= 2 && piece === "sword" && archetype === "Soulweaver/Tank"){
                         console.log(`Try to add ${archetype} to the list.`);
                         newMatching.push(archetype);
                     }
+                    //armors cannot roll attack so it's ok if there are only 2 substats
                     else if(goodSubstatCount >= 2 && piece === "chestpiece" && (archetype === "DPS"
                         || archetype === "Lifesteal DPS" || archetype === "PvE DPS")){
                         console.log(`Try to add ${archetype} to the list.`);
@@ -93,6 +109,7 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
                         });
                     }
 
+                    //restrictions for right side pieces are relaxed, 2 substats is fine.
                     if (goodSubstatCount >= 2) {
                         console.log(`Try to add ${archetype} to the list.`);
                         newMatching.push(archetype);
