@@ -1,5 +1,5 @@
 
-export default function SubstatDropdown({ substats, handleSelect, tier, textInputs, piece, handleTextInputChange, handleSubmit, errors }) {
+export default function SubstatDropdown({ substats, handleSelect, tier, textInputs, piece, handleTextInputChange, errors }) {
 
     if (piece === "sword") {
         return (
@@ -84,7 +84,6 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     )}
                     {tier === "epic" && errors["substat4"] && <p style={{ color: 'red' }}>{errors["substat4"]}</p>}
                 </form>
-                <button className="proceed-button" onClick={handleSubmit}>Submit</button>
             </div>
         );
     }
@@ -171,7 +170,6 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     )}
                     {tier === "epic" && errors["substat4"] && <p style={{ color: 'red' }}>{errors["substat4"]}</p>}
                 </form>
-                <button className="proceed-button" onClick={handleSubmit}>Submit</button>
             </div>
         );
     }
@@ -270,7 +268,6 @@ export default function SubstatDropdown({ substats, handleSelect, tier, textInpu
                     )}
                     {tier === "epic" && errors["substat4"] && <p style={{ color: 'red' }}>{errors["substat4"]}</p>}
                 </form>
-                <button className="proceed-button" onClick={handleSubmit}>Submit</button>
             </div>
         );
     }

@@ -38,9 +38,7 @@ export default function Eval() {
     const [archetypes, setArchetypes] = useState({
         arch1: "",
         arch2: "",
-        arch3: "",
-        arch4: "",
-        arch5: ""
+        arch3: ""
     })
 
     //state for matching archetypes
@@ -183,6 +181,11 @@ export default function Eval() {
             "substat2": "",
             "substat3": ""
         });
+        setArchetypes({
+            "arch1": "",
+            "arch2": "",
+            "arch3": ""
+        })
         setTier("heroic");
         setGearSet("");
         setPiece("");
@@ -254,7 +257,6 @@ export default function Eval() {
                     textInputs={textInputs}
                     piece={piece}
                     handleTextInputChange={handleTextInputChange}
-                    handleSubmit={handleSubmit}
                     errors={errors} />
             )}
             {/*show substats and their values*/}
@@ -281,7 +283,8 @@ export default function Eval() {
             )}
             {!submitted && (piece !== "")  && (
                 <ArchetypeSelector archetypes={archetypes}
-                handleSelectArchetypes={handleSelectArchetypes} />
+                handleSelectArchetypes={handleSelectArchetypes}
+                handleSubmit={handleSubmit} />
             )}
 
 
