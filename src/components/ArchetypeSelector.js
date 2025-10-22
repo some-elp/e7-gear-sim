@@ -1,4 +1,4 @@
-export default function ArchetypeSelector(archetypes, handleSelectArchetypes, handleSubmit){
+export default function ArchetypeSelector({archetypes, handleSelectArchetypes, handleSubmit}){
     return (
         <div>
             <form>

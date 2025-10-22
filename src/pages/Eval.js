@@ -292,7 +292,7 @@ export default function Eval() {
 
 
             {submitted && !startSim && (
-                <button classname="proceed-button" onClick={setStartSim(true)}>Simulate Enhancements</button>
+                <button className="proceed-button" onClick={setStartSim(true)}>Simulate Enhancements</button>
             )}
             {startSim && (
                 <div>
