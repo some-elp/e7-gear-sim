@@ -149,7 +149,10 @@ export default function Eval() {
             newErrors["dupes"] = "No duplicate substats";
         }
 
-
+        if(mainstat === ""){
+            alert("Must select a mainstat");
+            newErrors["mainstat"] = "Must select a mainstat";
+        }
         // Validate text inputs
         Object.entries(textInputs).forEach(([key, value]) => {
             if (value === '' || isNaN(value) || Number(value) < 0) {
