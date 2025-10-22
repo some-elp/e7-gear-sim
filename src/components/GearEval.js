@@ -72,17 +72,17 @@ export default function GearEval({ gearSet, piece, mainstat, substats, onMatchin
                         console.log(`Try to add ${archetype} to the list.`);
                         newMatching.push(archetype);
                     }
-                    //sword cannot roll defense so it's ok if there are only 2 substats
-                    else if(goodSubstatCount >= 2 && piece === "sword" && archetype === "Soulweaver/Tank"){
+                    //sword cannot roll defense so it's ok if there are only 2 substats for tanks
+                    else if(goodSubstatCount >= 2 && piece === "sword" && (archetype === "Soulweaver"
+                        || archetype === "Knight") ){
                         console.log(`Try to add ${archetype} to the list.`);
                         newMatching.push(archetype);
                     }
-                    //armors cannot roll attack so it's ok if there are only 2 substats
+                    //armors cannot roll attack so it's ok if there are only 2 substats for dps
                     else if(goodSubstatCount >= 2 && piece === "chestpiece" && (archetype === "DPS"
-                        || archetype === "Lifesteal DPS" || archetype === "PvE DPS")){
+                        || archetype === "PvE DPS" || archetype === "Attack-Scaling AutoCrit")){
                         console.log(`Try to add ${archetype} to the list.`);
                         newMatching.push(archetype);
-
                     }
 
                 });

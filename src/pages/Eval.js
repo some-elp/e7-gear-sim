@@ -8,6 +8,7 @@ import useBodyClass from "../components/useBodyClass";
 import "../css/eval.css";
 import SetSelector from "../components/SetSelector";
 import PieceSelector from "../components/PieceSelector";
+import ArchetypeSelector from "../components/ArchetypeSelector";
 
 export default function Eval() {
 
@@ -32,6 +33,15 @@ export default function Eval() {
         substat2: "",
         substat3: ""
     });
+
+    //archetype dropdown menu state
+    const [archetypes, setArchetypes] = useState({
+        arch1: "",
+        arch2: "",
+        arch3: "",
+        arch4: "",
+        arch5: ""
+    })
 
     //state for matching archetypes
     const [matchingArch, setMatchingArch] = useState([])
@@ -81,6 +91,15 @@ export default function Eval() {
             [name]: value
         }));
     };
+
+    //handler for archetype dropdown
+    const handleSelectArchetypes = (event) => {
+        const {name, value} = event.target;
+        setArchetypes((prevArchetypes) => ({
+            ...prevArchetypes,
+            [name]: value
+        }));
+    }
 
     // Handler for substat text input
     const handleTextInputChange = (event) => {
@@ -256,9 +275,16 @@ export default function Eval() {
                             <p>{substats.substat4}: {textInputs.substat4}</p>
                         </>
                     )}
+                    {/*Most likely won't need this class anymore */}
                     <GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats} onMatchingArch={onMatchingArch} />
                 </div>
             )}
+            {!submitted && (piece !== "")  && (
+                <ArchetypeSelector archetypes={archetypes}
+                handleSelectArchetypes={handleSelectArchetypes} />
+            )}
+
+
             {submitted && !startSim && (
                 <button classname="proceed-button" onClick={setStartSim(true)}>Simulate Enhancements</button>
             )}
