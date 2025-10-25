@@ -230,10 +230,12 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
     }
 
     const simResults = simulate();
-    <div>
-        <p>{archetypes.arch1}: {simResults[0]}</p>
-        <p>{archetypes.arch2}: {simResults[1]}</p>
-        <p>{archetypes.arch3}: {simResults[2]}</p>
-    </div>
+    return (
+        <>
+            <p>{archetypes.arch1}: {simResults[0]}</p>
+            <p>{archetypes.arch2}: {simResults[1]}</p>
+            <p>{archetypes.arch3}: {simResults[2]}</p>
+        </>
+    );
 
 }
