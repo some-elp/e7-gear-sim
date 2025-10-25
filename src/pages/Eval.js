@@ -62,9 +62,6 @@ export default function Eval() {
     //state for main stat
     const [mainstat, setMainstat] = useState("");
 
-    //handler for simulation button
-    const [startSim, setStartSim] = useState(false);
-
     //function to pass to mainstatselector
     const selectMainstat = (event) => {
         setMainstat(event.target.value);
@@ -124,7 +121,7 @@ export default function Eval() {
 
         //dropdown validation
         console.log(mainstat);
-        const hasDuplicates = Object.values(substats).some((item, index) => Object.values(substats).indexOf(item) !== index);
+        const hasDuplicateSubstat = Object.values(substats).some((item, index) => Object.values(substats).indexOf(item) !== index);
         Object.entries(substats).forEach(([key, value]) => {
             if (value === "") {
                 alert("Must select all substats");
@@ -144,7 +141,7 @@ export default function Eval() {
             }
 
         });
-        if (hasDuplicates) {
+        if (hasDuplicateSubstat) {
             alert("No duplicate substats");
             newErrors["dupes"] = "No duplicate substats";
         }
@@ -194,7 +191,6 @@ export default function Eval() {
         setPiece("");
         setMainstat("");
         setSubmitted(false);
-        setStartSim(false);
         setMatchingArch([]);
     }
 
@@ -281,7 +277,7 @@ export default function Eval() {
                         </>
                     )}
                     {/*Most likely won't need this class anymore */}
-                    <GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats} onMatchingArch={onMatchingArch} />
+                    {/*<GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats} onMatchingArch={onMatchingArch} />*/}
                 </div>
             )}
             {!submitted && (piece !== "")  && (
@@ -291,10 +287,7 @@ export default function Eval() {
             )}
 
 
-            {submitted && !startSim && (
-                <button className="proceed-button" onClick={setStartSim(true)}>Simulate Enhancements</button>
-            )}
-            {startSim && (
+            {submitted && (
                 <div>
                     <GearSim
                         enhancement={enhancement}
@@ -302,8 +295,10 @@ export default function Eval() {
                         textInputs={textInputs}
                         gearLevel={iLevel}
                         gearTier={tier}
-                        matchingArch={matchingArch}
+                        archetypes={archetypes}
                         piece={piece}
+                        set={gearSet}
+                        mainstat={mainstat}
                     />
                     <button className="proceed-button" onClick={resetAll}>Reset All</button>
                 </div>

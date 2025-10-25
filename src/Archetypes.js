@@ -9,7 +9,7 @@ const Archetypes = {
     },
     "Knight": {
         "mainstats": ["hp%", "speed"],
-        "substats": ["hp%", "defense%", "effectresistance", "speed"],
+        "substats": ["hp%", "defense%", "effectresistance", "speed", "hp"],
     },
     "Debuffer": {
         "mainstats": ["effectiveness", "hp%", "defense%", "speed"],
@@ -29,15 +29,15 @@ const Archetypes = {
     },
     "Attack-Scaling NonCrit": {
         "mainstats": ["attack%", "speed"],
-        "substats": ["attack%", "hp%", "def%", "speed"]
+        "substats": ["attack%", "hp%", "def%", "speed", "attack"]
     },
     "Defense-Scaling NonCrit": {
         "mainstats": ["defense%", "speed"],
-        "substats": ["hp%", "def%", "speed"]
+        "substats": ["hp%", "def%", "speed", "defense"]
     },
     "HP-Scaling NonCrit": {
         "mainstats": ["hp%", "speed"],
-        "substats": ["hp%", "def%", "speed"],
+        "substats": ["hp%", "def%", "speed", "hp"],
     },
     "Attack-Scaling AutoCrit": {
         "mainstats": ["attack%", "critdamage", "speed"],
@@ -45,7 +45,7 @@ const Archetypes = {
     },
     "Burn DPS": {
         "mainstats": ["attack%", "speed", "effectiveness"],
-        "substats": ["attack%", "hp%", "defense%", "speed", "effectiveness"]
+        "substats": ["attack%", "hp%", "defense%", "speed", "effectiveness", "attack"]
     },
     "PvE DPS": {
         "mainstats": ["critdamage", "critchance", "attack%", "speed", "effectiveness"],
@@ -64,8 +64,8 @@ const Archetypes = {
         "substats": ["attack%", "hp%", "critdamage", "effectresistance", "defense%"]
     },
     "Amiki":{
-        "mainstats": ["attack%", "effectresistance"],
-        "substats": ["attack%", "effectresistance"]
+        "mainstats": ["attack%"],
+        "substats": ["attack%", "effectresistance", "attack"]
     }
 };
 export default Archetypes;
