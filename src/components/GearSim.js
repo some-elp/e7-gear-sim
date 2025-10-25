@@ -21,10 +21,12 @@ import GearSetList from "../GearSetList";
 
 const ENHANCE_COUNT = 5;
 const SIM_COUNT = 5000;
-const AVERAGES = {
+const REFORGE = {
     "attack%": {
-        "85": 6,
-        "88": 7
+        1: 3,
+        2: 4,
+        3: 5,
+        4: 6
     },
     "defense%": {
         "85": 6,
@@ -83,10 +85,10 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
             let enhancedSubstatNames = { ...substats };
             let enhancedSubstatValues = { ...textInputs };
             let enhancedCount = {
-                "substat1": 1,
-                "substat2": 1,
-                "substat3": 1,
-                "substat4": 1
+                "substat1": 0,
+                "substat2": 0,
+                "substat3": 0,
+                "substat4": 0
             };
             console.log(enhancedSubstatValues);
             console.log(enhancedSubstatNames);
@@ -213,12 +215,12 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     isGood = false;
                 }
                 //piece is bad if we roll more than once into the substats that don't matter. (4x into useful stats)
-                if (goodEnhancements < 7 && (piece === "sword" || piece === "helmet" || piece === "chestpiece")) {
+                if (goodEnhancements < 4) {
                     isGood = false;
                 }
-                if (goodEnhancements < 6 && (piece === "necklace" || piece === "ring" || piece === "boots")) {
+                /*if (goodEnhancements < 6 && (piece === "necklace" || piece === "ring" || piece === "boots")) {
                     isGood = false;
-                }
+                }*/
                 //if the piece is good, then for this archetype, we add 1 to the results. 
                 if (isGood) {
                     results[index]++;
