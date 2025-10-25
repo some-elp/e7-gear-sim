@@ -17,46 +17,12 @@
 
 import Archetypes from "../Archetypes";
 import GearSetList from "../GearSetList";
+import Reforge from "../Reforge";
 
 
 const ENHANCE_COUNT = 5;
 const SIM_COUNT = 5000;
-const REFORGE = {
-    "attack%": {
-        1: 3,
-        2: 4,
-        3: 5,
-        4: 6
-    },
-    "defense%": {
-        "85": 6,
-        "88": 7
-    },
-    "hp%": {
-        "85": 6,
-        "88": 7
-    },
-    "speed": {
-        "85": 3,
-        "88": 3
-    },
-    "critchance": {
-        "85": 4,
-        "88": 4
-    },
-    "critdamage": {
-        "85": 5,
-        "88": 6
-    },
-    "effectiveness": {
-        "85": 6,
-        "88": 7
-    },
-    "effectresistance": {
-        "85": 6,
-        "88": 7
-    },
-}
+
 
 function randomIncrease(values, weights) {
 
