@@ -142,18 +142,6 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 }
             }
 
-            //Check to see if our simulated gear has average or better rolls
-            let isGood = true;
-
-            //in order to count number of flat stats in the gear
-            let flatStatCount = 0;
-
-            //variable to count number of substats that match the archetype
-            let matchCount = 0;
-
-            //variable to count number of rolls made into good substats
-            let goodEnhancements = 0;
-
             console.log("Final Substats: ", { enhancedSubstatNames });
             console.log("Final Values: ", { enhancedSubstatValues });
             /*
@@ -168,6 +156,17 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
             */
             //loop through each archetype on every piece
             Object.values(archetypes).forEach((arch, index) => {
+                //Check to see if our simulated gear has average or better rolls
+                let isGood = true;
+
+                //in order to count number of flat stats in the gear
+                let flatStatCount = 0;
+
+                //variable to count number of substats that match the archetype
+                let matchCount = 0;
+
+                //variable to count number of rolls made into good substats
+                let goodEnhancements = 0;
                 
                 //array to keep track of how many substats match each archetype.
                 let prefSubstats = Archetypes[arch].substats;
