@@ -110,8 +110,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 }
             }
 
-            console.log("Final Substats: ", { enhancedSubstatNames });
-            console.log("Final Values: ", { enhancedSubstatValues });
+            console.log("Final Substats: ", enhancedSubstatNames);
+            console.log("Final Values: ", enhancedSubstatValues);
             /*
                 We want to try and do the following:
                 - reforge the gear and check to see if the gear score is >65 for left, and >60 for right side.
@@ -167,8 +167,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 })
                 
                 //remove later
-                console.log("Reforged Substats: ", { enhancedSubstatNames });
-                console.log("Reforged Values: ", { enhancedSubstatValues });
+                console.log("Reforged Substats: ", enhancedSubstatNames);
+                console.log("Reforged Values: ", enhancedSubstatValues);
 
                 //piece is bad if the mainstat doesn't match the archetype
                 if ((piece === "necklace" || piece === "ring" || piece === "boots") && !(prefMainstats.includes(mainstat))){
