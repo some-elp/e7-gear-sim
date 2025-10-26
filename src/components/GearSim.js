@@ -144,9 +144,9 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     console.log(`Checking: key=${key}, value=${value}`);
 
                     //reforge if 85 gear to check gear score after loop
-                    if(gearLevel === "85"){
+                    /*if(gearLevel === "85"){
                         enhancedSubstatValues[key] = enhancedSubstatValues[key] + Reforge[value][enhancedCount[key]]
-                    }
+                    }*/
 
                     //keep track of how many of the preferred substats for this archetype are on the piece
                     if (prefSubstats.includes(value)){
