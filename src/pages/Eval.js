@@ -28,9 +28,9 @@ export default function Eval() {
 
     //substat text input state
     const [textInputs, setTextInputs] = useState({
-        substat1: 0,
-        substat2: 0,
-        substat3: 0
+        substat1: "",
+        substat2: "",
+        substat3: ""
     });
 
     //archetype dropdown menu state
