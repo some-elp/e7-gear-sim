@@ -2,7 +2,6 @@ import Enhancement from "../enhancement";
 import SubstatDropdown from "../components/SubstatDropdown";
 import { useState } from "react";
 import MainstatSelector from "../components/MainstatSelector";
-import GearEval from "../components/GearEval";
 import GearSim from "../components/GearSim";
 import useBodyClass from "../components/useBodyClass";
 import "../css/eval.css";
@@ -29,9 +28,9 @@ export default function Eval() {
 
     //substat text input state
     const [textInputs, setTextInputs] = useState({
-        substat1: "",
-        substat2: "",
-        substat3: ""
+        substat1: 0,
+        substat2: 0,
+        substat3: 0
     });
 
     //archetype dropdown menu state
@@ -98,7 +97,7 @@ export default function Eval() {
         const { name, value } = event.target;
         setTextInputs((prevTextInputs) => ({
             ...prevTextInputs,
-            [name]: value,
+            [name]: Number(value),
         }));
     };
 
@@ -174,9 +173,9 @@ export default function Eval() {
             "substat3": ""
         });
         setTextInputs({
-            "substat1": "",
-            "substat2": "",
-            "substat3": ""
+            "substat1": 0,
+            "substat2": 0,
+            "substat3": 0
         });
         setArchetypes({
             "arch1": "",

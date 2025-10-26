@@ -201,8 +201,8 @@ export default function Gacha() {
                         tier={tier}
                         textInputs={textInputs}
                         handleTextInputChange={handleTextInputChange}
-                        handleSubmit={handleSubmit}
                         errors={errors} />
+                    <button className="proceed-button" onClick={handleSubmit}>Submit</button>
                 </div>
             )}
             {/*show substats and their values*/}
