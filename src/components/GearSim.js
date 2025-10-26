@@ -144,7 +144,7 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     console.log(`Checking: key=${key}, value=${value}`);
 
                     //reforge if 85 gear to check gear score after loop
-                    if(iLevel === "85"){
+                    if(gearLevel === "85"){
                         enhancedSubstatValues[key] = enhancedSubstatValues[key] + Reforge[value][enhancedCount[key]]
                     }
 
