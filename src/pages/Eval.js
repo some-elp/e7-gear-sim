@@ -41,9 +41,6 @@ export default function Eval() {
         arch3: ""
     })
 
-    //state for matching archetypes
-    const [matchingArch, setMatchingArch] = useState([])
-
     //state for submit button
     const [submitted, setSubmitted] = useState(false);
 
@@ -191,12 +188,6 @@ export default function Eval() {
         setPiece("");
         setMainstat("");
         setSubmitted(false);
-        setMatchingArch([]);
-    }
-
-    //handler function for matching archetypes
-    function onMatchingArch(updated) {
-        setMatchingArch(updated);
     }
 
 
@@ -276,8 +267,6 @@ export default function Eval() {
                             <p>{substats.substat4}: {textInputs.substat4}</p>
                         </>
                     )}
-                    {/*Most likely won't need this class anymore */}
-                    {/*<GearEval gearSet={gearSet} piece={piece} mainstat={mainstat} substats={substats} onMatchingArch={onMatchingArch} />*/}
                 </div>
             )}
             {!submitted && (piece !== "")  && (

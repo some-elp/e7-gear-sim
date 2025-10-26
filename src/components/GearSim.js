@@ -140,7 +140,13 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 let prefSubstats = Archetypes[arch].substats;
                 let prefMainstats = Archetypes[arch].mainstats;
                 Object.entries(enhancedSubstatNames).forEach(([key, value]) => {
+                    //example object: ("substat1", "hp%")
                     console.log(`Checking: key=${key}, value=${value}`);
+
+                    //reforge if 85 gear to check gear score after loop
+                    if(iLevel === "85"){
+                        enhancedSubstatValues[key] = enhancedSubstatValues[key] + Reforge[value][enhancedCount[key]]
+                    }
 
                     //keep track of how many of the preferred substats for this archetype are on the piece
                     if (prefSubstats.includes(value)){
@@ -151,14 +157,18 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
 
                     
 
-                    //if we have flat stats, do not roll more than twice into them
+                    //if we have flat stats, do not roll more than twice into them, also keep track of how many flat stats
                     if (value === "attack" || value === "defense" || value === "hp") {
-                        if (enhancedCount[key] > 2) {
+                        if (enhancedCount[key] > 1) {
                             isGood = false;
                         }
                         flatStatCount++;
                     }
                 })
+                
+                //remove later
+                console.log("Reforged Substats: ", { enhancedSubstatNames });
+                console.log("Reforged Values: ", { enhancedSubstatValues });
 
                 //piece is bad if the mainstat doesn't match the archetype
                 if ((piece === "necklace" || piece === "ring" || piece === "boots") && !(prefMainstats.includes(mainstat))){
