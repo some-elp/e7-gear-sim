@@ -56,8 +56,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 "substat3": 0,
                 "substat4": 0
             };
-            console.log("Initial Substats: ", enhancedSubstatValues);
-            console.log("Initial Values: ", enhancedSubstatNames);
+            console.log("Initial Substats: ", enhancedSubstatNames);
+            console.log("Initial Values: ", enhancedSubstatValues);
 
             //loop to keep track of how many enhancements, up to 5 for now.
             //end up with a +15 piece.
@@ -104,6 +104,12 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 else {
                     const { values, weights } = enhancement[substatName][gearLevel][gearTier];
                     let increment = randomIncrease(values, weights);
+                    console.log(
+                        "j =", j,
+                        "| randomSubstat:", randomSubstat,
+                        "| before:", enhancedSubstatValues[randomSubstat],
+                        "| increment:", increment
+                    );
 
                     enhancedSubstatValues[randomSubstat] = (parseInt(enhancedSubstatValues[randomSubstat])) + increment;
                     enhancedCount[randomSubstat]++;
