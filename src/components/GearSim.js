@@ -56,8 +56,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 "substat3": 0,
                 "substat4": 0
             };
-            console.log(enhancedSubstatValues);
-            console.log(enhancedSubstatNames);
+            console.log("Initial Substats: ", enhancedSubstatValues);
+            console.log("Initial Values: ", enhancedSubstatNames);
 
             //loop to keep track of how many enhancements, up to 5 for now.
             //end up with a +15 piece.
