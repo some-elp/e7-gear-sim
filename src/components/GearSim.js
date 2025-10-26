@@ -56,8 +56,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 "substat3": 0,
                 "substat4": 0
             };
-            console.log("Initial Substats: ", enhancedSubstatNames);
-            console.log("Initial Values: ", enhancedSubstatValues);
+            console.log("Initial Substats: ", {enhancedSubstatNames});
+            console.log("Initial Values: ", {enhancedSubstatValues});
 
             //loop to keep track of how many enhancements, up to 5 for now.
             //end up with a +15 piece.
@@ -116,8 +116,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 }
             }
 
-            console.log("Final Substats: ", enhancedSubstatNames);
-            console.log("Final Values: ", enhancedSubstatValues);
+            console.log("Final Substats: ", {enhancedSubstatNames});
+            console.log("Final Values: ", {enhancedSubstatValues});
             /*
                 We want to try and do the following:
                 - reforge the gear and check to see if the gear score is >65 for left, and >60 for right side.
