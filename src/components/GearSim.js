@@ -59,6 +59,13 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
             console.log("Initial Substats: ", {...enhancedSubstatNames});
             console.log("Initial Values: ", {...enhancedSubstatValues});
 
+            
+            //variable for whether the reforged gear meets the gear score requirement
+            let goodReforge = true;
+
+            //keep track of the piece's gearscore
+            let gearScore = 0;
+
             //loop to keep track of how many enhancements, up to 5 for now.
             //end up with a +15 piece.
             for (let j = 0; j < ENHANCE_COUNT; j++) {
@@ -120,14 +127,45 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
             console.log("Final Values: ", {...enhancedSubstatValues});
 
             //reforge if 85 gear to check gear score after loop
+            //example (key,value): ("substat1", "hp%")
             Object.entries(enhancedSubstatNames).forEach(([key, value]) => {
                 if(gearLevel === "85"){
                     enhancedSubstatValues[key] = enhancedSubstatValues[key] + Reforge[value][enhancedCount[key]]
-                }                
+                }
+
+                if(value === "critchance"){
+                    gearScore += enhancedSubstatValues[key]*1.6;
+                }
+                else if(value === "critdamage"){
+                    gearScore += enhancedSubstatValues[key]*1.14;
+                }
+                else if(value === "speed"){
+                    gearScore += enhancedSubstatValues[key]*2;
+                }
+                else if(value === "attack"){
+                    gearScore += enhancedSubstatValues[key]*0.0972; 
+                }
+                else if(value === "hp"){
+                    gearScore += enhancedSubstatValues[key]*0.02;
+                }
+                else if (value === "defense"){
+                    gearScore += enhancedSubstatValues[key]*0.135;
+                }
+                else{
+                    gearScore += enhancedSubstatValues[key];
+                }
             })
-            
+
+
+            if((piece === "sword" || piece === "helmet" || piece === "chestpiece") && gearScore < 65){
+                goodReforge = false;
+            }
+            if((piece === "necklace" || piece === "ring" || piece === "boots") && gearScore < 60){
+                goodReforge = false;
+            }
             console.log("Reforged Substats: ", {...enhancedSubstatNames});
-            console.log("Reforged Values: ", {...enhancedSubstatValues});            
+            console.log("Reforged Values: ", {...enhancedSubstatValues});
+            console.log("Reforged gearscore: ", {gearScore});            
             /*
                 We want to try and do the following:
                 - reforge the gear and check to see if the gear score is >65 for left, and >60 for right side.
@@ -200,6 +238,10 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 }
                 //piece is bad if we roll more than once into the substats that don't matter. (4x into useful stats)
                 if (goodEnhancements < 4) {
+                    isGood = false;
+                }
+                //piece is bad if gearScore is too low (65 left side and 60 right side)
+                if (!goodReforge){
                     isGood = false;
                 }
                 /*if (goodEnhancements < 6 && (piece === "necklace" || piece === "ring" || piece === "boots")) {
