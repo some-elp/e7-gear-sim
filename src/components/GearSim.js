@@ -114,10 +114,20 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     enhancedSubstatValues[randomSubstat] = (parseInt(enhancedSubstatValues[randomSubstat])) + increment;
                     enhancedCount[randomSubstat]++;
                 }
-            }
+            }  
 
             console.log("Final Substats: ", {...enhancedSubstatNames});
             console.log("Final Values: ", {...enhancedSubstatValues});
+
+            //reforge if 85 gear to check gear score after loop
+            Object.entries(enhancedSubstatNames).forEach(([key, value]) => {
+                if(gearLevel === "85"){
+                    enhancedSubstatValues[key] = enhancedSubstatValues[key] + Reforge[value][enhancedCount[key]]
+                }                
+            })
+            
+            console.log("Reforged Substats: ", {...enhancedSubstatNames});
+            console.log("Reforged Values: ", {...enhancedSubstatValues});            
             /*
                 We want to try and do the following:
                 - reforge the gear and check to see if the gear score is >65 for left, and >60 for right side.
@@ -149,11 +159,6 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     //example object: ("substat1", "hp%")
                     console.log(`Checking: key=${key}, value=${value}`);
 
-                    //reforge if 85 gear to check gear score after loop
-                    /*if(gearLevel === "85"){
-                        enhancedSubstatValues[key] = enhancedSubstatValues[key] + Reforge[value][enhancedCount[key]]
-                    }*/
-
                     //keep track of how many of the preferred substats for this archetype are on the piece
                     if (prefSubstats.includes(value)){
                         matchCount++;
@@ -172,9 +177,6 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     }
                 })
                 
-                //remove later
-                console.log("Reforged Substats: ", enhancedSubstatNames);
-                console.log("Reforged Values: ", enhancedSubstatValues);
 
                 //piece is bad if the mainstat doesn't match the archetype
                 if ((piece === "necklace" || piece === "ring" || piece === "boots") && !(prefMainstats.includes(mainstat))){
