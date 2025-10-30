@@ -5,7 +5,7 @@
     - if we roll twice into flat on any archetype then it's over
     - do we set a minimum gs, like 65ish for both left and right? or 60 for right.
     Exceptions:
-    - flat attack is ok on Burn DPS, Attack-Scaling NonCrit, DPS, and Amiki
+    - flat attack is ok on Burn DPS, Attack-Scaling NonCrit, and Amiki
     - flat defense is ok on Defense-Scaling NonCrit
     - flat hp is ok on Knights and HP-Scaling NonCrit
     - the above still cannot roll twice into flat stat
@@ -22,6 +22,12 @@ import Reforge from "../Reforge";
 
 const ENHANCE_COUNT = 5;
 const SIM_COUNT = 5000;
+const CORNER_CASE = [
+    "Attack-Scaling NonCrit",
+    "Amiki",
+    "Defense-Scaling NonCrit",
+    "HP-Scaling NonCrit"
+];
 
 
 function randomIncrease(values, weights) {
@@ -181,8 +187,8 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                 //Check to see if our simulated gear has average or better rolls
                 let isGood = true;
 
-                //in order to count number of flat stats in the gear
-                let flatStatCount = 0;
+                //variable to check protection set
+                let protHP = true;
 
                 //variable to count number of substats that match the archetype
                 let matchCount = 0;
@@ -207,46 +213,69 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
                     
 
                     //if we have flat stats, do not roll more than twice into them, also keep track of how many flat stats
-                    if (value === "attack" || value === "defense" || value === "hp") {
+                    /*if (value === "attack" && !(arch === "Burn DPS" || arch === "Attack-Scaling NonCrit" || arch === "Amiki")) {
                         if (enhancedCount[key] > 1) {
                             isGood = false;
                         }
                         flatStatCount++;
+                    }*/
+
+                    //if it's a left-side protection set piece, it must roll at least 2x into hp%
+                    if(value === "hp%" && set === "protection" && (piece === "sword" || piece === "helmet" || piece === "chestpiece")){
+                        if(enhancedCount[key] < 2){
+                            protHP = false;
+                        }
                     }
                 })
                 
 
-                //piece is bad if the mainstat doesn't match the archetype
-                if ((piece === "necklace" || piece === "ring" || piece === "boots") && !(prefMainstats.includes(mainstat))){
-                    isGood = false;
-                }
-                //piece is bad if the set doesn't match the archetype
-                if (!GearSetList[set].includes(arch)){
-                    isGood = false;
-                }
                 //piece is bad if left side and less than 3 useful substats
-                if ((piece === "sword" || piece === "helmet" || piece === "chestpiece") && matchCount < 3){
+                if ((piece === "sword" || piece === "helmet" || piece === "chestpiece") && matchCount < 3 && !(CORNER_CASE.includes(arch))){
                     isGood = false;
                 }
+                //bad if less than 2 in corner cases
+                if ((piece === "sword" || piece === "helmet" || piece === "chestpiece") && matchCount < 2 && CORNER_CASE.includes(arch)){
+                    isGood = false;
+                }                
                 //piece is bad if right side and less than 2 useful substats
                 if((piece === "necklace" || piece === "ring" || piece === "boots") && matchCount < 2){
                     isGood = false;
                 }
-                //piece is bad if we have more than 1 flat substat
-                if (flatStatCount > 1) {
+                //but the piece is still good if 2 substat sword and tank archetype
+                if((piece === "sword" && (arch === "Knight" || arch === "Soulweaver") && matchCount >=2)){
+                    isGood = true;
+                }
+                //but the piece is still good if 2 substat chestpiece and full dps
+                if((piece === "chestpiece" && arch === "DPS" && matchCount >= 2)){
+                    isGood = true;
+                }
+                //but the piece is still good if it's effres only on a chestpiece for amiki
+                if(piece === "chestpiece" && arch === "Amiki" && matchCount >= 1){
+                    isGood = true;
+                }
+                //piece is bad if left side prot set hp and doesn't have 2 rolls into hp%
+                if(!protHP){
                     isGood = false;
                 }
                 //piece is bad if we roll more than once into the substats that don't matter. (4x into useful stats)
                 if (goodEnhancements < 4) {
                     isGood = false;
                 }
+                if (goodEnhancements < 3 && arch === "Amiki"){
+                    isGood = true;
+                }
+                //piece is bad if the set doesn't match the archetype
+                if (!GearSetList[set].includes(arch)){
+                    isGood = false;
+                }
+                //piece is bad if the mainstat doesn't match the archetype
+                if ((piece === "necklace" || piece === "ring" || piece === "boots") && !(prefMainstats.includes(mainstat))){
+                    isGood = false;
+                }
                 //piece is bad if gearScore is too low (65 left side and 60 right side)
                 if (!goodReforge){
                     isGood = false;
                 }
-                /*if (goodEnhancements < 6 && (piece === "necklace" || piece === "ring" || piece === "boots")) {
-                    isGood = false;
-                }*/
                 //if the piece is good, then for this archetype, we add 1 to the results. 
                 if (isGood) {
                     results[index]++;
@@ -259,9 +288,9 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
     const simResults = simulate();
     return (
         <>
-            <p>{archetypes.arch1}: {simResults[0]}</p>
-            <p>{archetypes.arch2}: {simResults[1]}</p>
-            <p>{archetypes.arch3}: {simResults[2]}</p>
+            <p>{archetypes.arch1}: {simResults[0]}/5000</p>
+            <p>{archetypes.arch2}: {simResults[1]}/5000</p>
+            <p>{archetypes.arch3}: {simResults[2]}/5000</p>
         </>
     );
 
