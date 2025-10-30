@@ -1,7 +1,7 @@
 export default function ArchetypeSelector({archetypes, handleSelectArchetypes, handleSubmit}){
     return (
         <div>
-            <form>
+            <form className="archetype-selector">
                 <div className="next-to">
                     <select 
                         name="arch1"
