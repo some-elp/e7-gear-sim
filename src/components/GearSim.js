@@ -288,9 +288,9 @@ export default function GearSim({ enhancement, substats, textInputs, gearLevel, 
     const simResults = simulate();
     return (
         <>
-            <p>{archetypes.arch1}: {simResults[0]}/5000</p>
-            <p>{archetypes.arch2}: {simResults[1]}/5000</p>
-            <p>{archetypes.arch3}: {simResults[2]}/5000</p>
+            <p>{archetypes.arch1}: {simResults[0]} / 5000</p>
+            <p>{archetypes.arch2}: {simResults[1]} / 5000</p>
+            <p>{archetypes.arch3}: {simResults[2]} / 5000</p>
         </>
     );
 
